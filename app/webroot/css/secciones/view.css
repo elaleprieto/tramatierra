@@ -1,0 +1,9 @@
+/* line 1, ../../sass/secciones/view.scss */
+.fotos {
+  text-align: center;
+  overflow: hidden;
+  height: 200px;
+  max-height: 200px;
+  weight: 450px;
+  max-weight: 450px;
+}
