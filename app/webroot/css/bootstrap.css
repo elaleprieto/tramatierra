@@ -260,8 +260,8 @@ a:hover {
 }
 
 .span4 {
-  /*width: 300px;*/
-  width: 400px;
+	width: 300px;
+/*  width: 400px;*/
 }
 
 .span3 {
