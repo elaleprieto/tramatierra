@@ -14,10 +14,10 @@
 	<tr>
 		<td><?php echo h($multimediasSeccion['MultimediasSeccion']['id']); ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($multimediasSeccion['Multimedia']['id'], array('controller' => 'multimedia', 'action' => 'view', $multimediasSeccion['Multimedia']['id'])); ?>
+			<?php echo $this->Html->link($multimediasSeccion['Multimedia']['title'], array('controller' => 'multimedia', 'action' => 'view', $multimediasSeccion['Multimedia']['id'])); ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link($multimediasSeccion['Seccion']['id'], array('controller' => 'secciones', 'action' => 'view', $multimediasSeccion['Seccion']['id'])); ?>
+			<?php echo $this->Html->link($multimediasSeccion['Seccion']['title'], array('controller' => 'secciones', 'action' => 'view', $multimediasSeccion['Seccion']['id'])); ?>
 		</td>
 		<td><?php echo h($multimediasSeccion['MultimediasSeccion']['created']); ?>&nbsp;</td>
 		<td><?php echo h($multimediasSeccion['MultimediasSeccion']['modified']); ?>&nbsp;</td>
