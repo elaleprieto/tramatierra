@@ -110,7 +110,7 @@ class MultimediaController extends AppController {
 			// $camposAGuardar = array('name', 'title', 'description', 'url', 'multimedia_categoria_id', )
 			if (isset($this -> data['Multimedia']['archivo']['name'])) {
 				$nombreArchivo = $this -> data['Multimedia']['archivo']['name'];
-				$uploadDir = WEBROOT_DIR . '/multimedia/';
+				$uploadDir = WEBROOT_DIR . '/mm/';
 				$uploadFile = $uploadDir . $nombreArchivo;
 
 				if (!move_uploaded_file($this -> data['Multimedia']['archivo']['tmp_name'], $uploadFile)) {
