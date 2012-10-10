@@ -72,6 +72,7 @@
 							<li>
 								<a href="#contact">Contacto</a>
 							</li>
+							<!-- 			Menú Ejes				 -->
 							<li <?=($this -> request -> controller == 'secciones') ? 'class="dropdown active"' : 'class="dropdown"' ?>>
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Ejes <b class="caret"></b></a>
 								<ul class="dropdown-menu">
@@ -109,7 +110,31 @@
 									<li><a href="#">One more separated link</a></li>
 									-->
 								</ul>
-							</li>
+							</li><!-- 			Fin Menú Ejes				 -->
+							<!-- 			Menú Admin				 -->
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin <b class="caret"></b></a>
+								<ul class="dropdown-menu">
+									<li>
+										<?=$this -> Html -> link('Cargar Multimedia', array('controller' => 'multimedia', 'action' => 'add')) ?>
+									</li>
+									<li>
+										<?=$this -> Html -> link('Cargar Videos', array('controller' => 'secciones', 'action' => 'view', 4)) ?>
+									</li>
+									<li>
+										<?=$this -> Html -> link('Cargar Audios', array('controller' => 'secciones', 'action' => 'view', 5)) ?>
+									</li>
+									<li>
+										<?=$this -> Html -> link('Cargar Publicaciones', array('controller' => 'secciones', 'action' => 'view', 6)) ?>
+									</li>
+									<!--
+									<li class="divider"></li>
+									<li class="nav-header">Nav header</li>
+									<li><a href="#">Separated link</a></li>
+									<li><a href="#">One more separated link</a></li>
+									-->
+								</ul>
+							</li><!-- 			Fin Menú Admin				 -->
 						</ul>
 						<!--
 						<form class="navbar-form pull-right">
@@ -171,7 +196,8 @@
 		</script>
 		<?php echo $this -> Html -> script(array('vendor/bootstrap.min', 'plugins', 'main')); ?>
 		<script>
-			var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']]; ( function(d, t) {
+			var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']];
+			( function(d, t) {
 					var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
 					g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
 					s.parentNode.insertBefore(g, s)
