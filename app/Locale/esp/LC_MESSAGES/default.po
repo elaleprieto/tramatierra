@@ -197,7 +197,7 @@ msgstr "Nueva Área"
 #: View/Helper/FormHelper.php:1668
 #: View/Scaffolds/form.ctp:23
 msgid "Submit"
-msgstr "Enviare"
+msgstr "Enviar"
 
 #: View/Areas/add.ctp:15
 #: View/Areas/edit.ctp:16
