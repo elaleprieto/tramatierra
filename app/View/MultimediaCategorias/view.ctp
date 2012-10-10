@@ -45,8 +45,8 @@
 	<table cellpadding = "0" cellspacing = "0">
 	<tr>
 		<th><?php echo __('Id'); ?></th>
-		<th><?php echo __('Nombre'); ?></th>
-		<th><?php echo __('Titulo'); ?></th>
+		<th><?php echo __('Name'); ?></th>
+		<th><?php echo __('Title'); ?></th>
 		<th><?php echo __('Descripcion'); ?></th>
 		<th><?php echo __('Url'); ?></th>
 		<th><?php echo __('Multimedia Categoria Id'); ?></th>
@@ -59,8 +59,8 @@
 		foreach ($multimediaCategoria['Multimedia'] as $multimedia): ?>
 		<tr>
 			<td><?php echo $multimedia['id']; ?></td>
-			<td><?php echo $multimedia['nombre']; ?></td>
-			<td><?php echo $multimedia['titulo']; ?></td>
+			<td><?php echo $multimedia['name']; ?></td>
+			<td><?php echo $multimedia['title']; ?></td>
 			<td><?php echo $multimedia['descripcion']; ?></td>
 			<td><?php echo $multimedia['url']; ?></td>
 			<td><?php echo $multimedia['multimedia_categoria_id']; ?></td>
