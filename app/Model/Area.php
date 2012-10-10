@@ -5,6 +5,7 @@ App::uses('AppModel', 'Model');
  *
  * @property Seccion $Seccion
  * @property Subarea $Subarea
+ * @property Multimedia $Multimedia
  */
 class Area extends AppModel {
 
@@ -91,6 +92,30 @@ class Area extends AppModel {
 			'exclusive' => '',
 			'finderQuery' => '',
 			'counterQuery' => ''
+		)
+	);
+
+
+/**
+ * hasAndBelongsToMany associations
+ *
+ * @var array
+ */
+	public $hasAndBelongsToMany = array(
+		'Multimedia' => array(
+			'className' => 'Multimedia',
+			'joinTable' => 'areas_multimedias',
+			'foreignKey' => 'area_id',
+			'associationForeignKey' => 'multimedia_id',
+			'unique' => 'keepExisting',
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'finderQuery' => '',
+			'deleteQuery' => '',
+			'insertQuery' => ''
 		)
 	);
 

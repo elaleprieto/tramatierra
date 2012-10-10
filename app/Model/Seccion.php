@@ -7,8 +7,7 @@ App::uses('AppModel', 'Model');
  * @property Multimedia $Multimedia
  */
 class Seccion extends AppModel {
-	public $displayField = 'title';
-	
+
 /**
  * Validation rules
  *

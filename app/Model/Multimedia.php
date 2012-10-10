@@ -4,10 +4,11 @@ App::uses('AppModel', 'Model');
  * Multimedia Model
  *
  * @property MultimediaCategoria $MultimediaCategoria
+ * @property Area $Area
  * @property Seccion $Seccion
+ * @property Subarea $Subarea
  */
 class Multimedia extends AppModel {
-	public $displayField = 'title';
 
 /**
  * Use table
@@ -77,11 +78,41 @@ class Multimedia extends AppModel {
  * @var array
  */
 	public $hasAndBelongsToMany = array(
+		'Area' => array(
+			'className' => 'Area',
+			'joinTable' => 'areas_multimedias',
+			'foreignKey' => 'multimedia_id',
+			'associationForeignKey' => 'area_id',
+			'unique' => 'keepExisting',
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'finderQuery' => '',
+			'deleteQuery' => '',
+			'insertQuery' => ''
+		),
 		'Seccion' => array(
 			'className' => 'Seccion',
 			'joinTable' => 'multimedias_secciones',
 			'foreignKey' => 'multimedia_id',
 			'associationForeignKey' => 'seccion_id',
+			'unique' => 'keepExisting',
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'finderQuery' => '',
+			'deleteQuery' => '',
+			'insertQuery' => ''
+		),
+		'Subarea' => array(
+			'className' => 'Subarea',
+			'joinTable' => 'multimedias_subareas',
+			'foreignKey' => 'multimedia_id',
+			'associationForeignKey' => 'subarea_id',
 			'unique' => 'keepExisting',
 			'conditions' => '',
 			'fields' => '',

@@ -1,11 +1,12 @@
 <?php
 App::uses('AppModel', 'Model');
 /**
- * MultimediaCategoria Model
+ * MultimediasSubarea Model
  *
  * @property Multimedia $Multimedia
+ * @property Subareas $Subareas
  */
-class MultimediaCategoria extends AppModel {
+class MultimediasSubarea extends AppModel {
 
 /**
  * Validation rules
@@ -13,9 +14,9 @@ class MultimediaCategoria extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'name' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
+		'multimedia_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -23,9 +24,9 @@ class MultimediaCategoria extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'title' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
+		'subareas_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -38,24 +39,24 @@ class MultimediaCategoria extends AppModel {
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
 /**
- * hasMany associations
+ * belongsTo associations
  *
  * @var array
  */
-	public $hasMany = array(
+	public $belongsTo = array(
 		'Multimedia' => array(
 			'className' => 'Multimedia',
-			'foreignKey' => 'multimedia_categoria_id',
-			'dependent' => false,
+			'foreignKey' => 'multimedia_id',
 			'conditions' => '',
 			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'order' => ''
+		),
+		'Subareas' => array(
+			'className' => 'Subareas',
+			'foreignKey' => 'subareas_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
 		)
 	);
-
 }

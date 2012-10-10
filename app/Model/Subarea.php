@@ -4,6 +4,7 @@ App::uses('AppModel', 'Model');
  * Subarea Model
  *
  * @property Area $Area
+ * @property Multimedia $Multimedia
  */
 class Subarea extends AppModel {
 
@@ -13,7 +14,7 @@ class Subarea extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'nombre' => array(
+		'name' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
 				//'message' => 'Your custom message here',
@@ -23,7 +24,7 @@ class Subarea extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'titulo' => array(
+		'title' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
 				//'message' => 'Your custom message here',
@@ -71,4 +72,28 @@ class Subarea extends AppModel {
 			'order' => ''
 		)
 	);
+
+/**
+ * hasAndBelongsToMany associations
+ *
+ * @var array
+ */
+	public $hasAndBelongsToMany = array(
+		'Multimedia' => array(
+			'className' => 'Multimedia',
+			'joinTable' => 'multimedias_subareas',
+			'foreignKey' => 'subarea_id',
+			'associationForeignKey' => 'multimedia_id',
+			'unique' => 'keepExisting',
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'finderQuery' => '',
+			'deleteQuery' => '',
+			'insertQuery' => ''
+		)
+	);
+
 }

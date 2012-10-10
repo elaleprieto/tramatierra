@@ -13,7 +13,7 @@ class Evento extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'nombre' => array(
+		'name' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
 				//'message' => 'Your custom message here',
@@ -23,7 +23,7 @@ class Evento extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'titulo' => array(
+		'title' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
 				//'message' => 'Your custom message here',

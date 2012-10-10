@@ -1,11 +1,19 @@
 <?php
 App::uses('AppModel', 'Model');
 /**
- * MultimediaCategoria Model
+ * AreasMultimedia Model
  *
+ * @property Area $Area
  * @property Multimedia $Multimedia
  */
-class MultimediaCategoria extends AppModel {
+class AreasMultimedia extends AppModel {
+
+/**
+ * Use table
+ *
+ * @var mixed False or table name
+ */
+	public $useTable = 'areas_multimedias';
 
 /**
  * Validation rules
@@ -13,9 +21,9 @@ class MultimediaCategoria extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'name' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
+		'area_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -23,9 +31,9 @@ class MultimediaCategoria extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'title' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
+		'multimedia_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -38,24 +46,24 @@ class MultimediaCategoria extends AppModel {
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
 /**
- * hasMany associations
+ * belongsTo associations
  *
  * @var array
  */
-	public $hasMany = array(
-		'Multimedia' => array(
-			'className' => 'Multimedia',
-			'foreignKey' => 'multimedia_categoria_id',
-			'dependent' => false,
+	public $belongsTo = array(
+		'Area' => array(
+			'className' => 'Area',
+			'foreignKey' => 'area_id',
 			'conditions' => '',
 			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'order' => ''
+		),
+		'Multimedia' => array(
+			'className' => 'Multimedia',
+			'foreignKey' => 'multimedia_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
 		)
 	);
-
 }
