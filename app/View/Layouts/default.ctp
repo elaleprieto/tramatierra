@@ -81,9 +81,18 @@
 									<li>
 										<?=$this -> Html -> link('Cultura libre', array('controller' => 'secciones', 'action' => 'view', 4)) ?>
 									</li>
-									<li>
+									<li class="dropdown-submenu">
 										<?=$this -> Html -> link('Energia', array('controller' => 'secciones', 'action' => 'view', 3)) ?>
+										<ul class="dropdown-menu">
+											<li>
+												<?=$this -> Html -> link('Renovables', array('controller' => 'areas', 'action' => 'view', 1)) ?>
+											</li>
+											<li>
+												<?=$this -> Html -> link('Modelo energético', array('controller' => 'areas', 'action' => 'view', 2)) ?>
+											</li>
+										</ul>
 									</li>
+										
 									<li>
 										<?=$this -> Html -> link('Género', array('controller' => 'secciones', 'action' => 'view', 5)) ?>
 									</li>
