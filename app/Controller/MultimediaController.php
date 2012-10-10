@@ -111,17 +111,20 @@ class MultimediaController extends AppController {
 		if ($this -> request -> is('post')) {
 			$this -> Multimedia -> create();
 			$this -> Multimedia -> set($this -> request -> data);
-			// $camposAGuardar = array('name', 'title', 'description', 'url', 'multimedia_categoria_id', )
-			if (isset($this -> data['Multimedia']['archivo']['name'])) {
+
+			# Se verifica y se setea el archivo multimedia
+			if (isset($this -> data['Multimedia']['archivo']['name']) && ($this -> data['Multimedia']['archivo']['name'] != '')) {
 				$nombreArchivo = $this -> data['Multimedia']['archivo']['name'];
-				$uploadDir = WEBROOT_DIR . '/mm/';
+				$uploadDir = WWW_ROOT . '/mm/';
 				$uploadFile = $uploadDir . $nombreArchivo;
 
 				if (!move_uploaded_file($this -> data['Multimedia']['archivo']['tmp_name'], $uploadFile)) {
-					$this -> Session -> setFlash(__('The multimedia could not be saved. Please, try again.'));
+					$this -> Session -> setFlash(__('The multimedia could not be saved. Please, verify the file.'));
 					return $this -> redirect(array('action' => 'cargar', $this -> request -> data));
 				}
 				$this -> Multimedia -> set('archivo', $nombreArchivo);
+			} else {
+				$this -> Multimedia -> set('archivo', '');
 			}
 
 			if ($this -> Multimedia -> save()) {
