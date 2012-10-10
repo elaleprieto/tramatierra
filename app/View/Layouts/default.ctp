@@ -116,7 +116,7 @@
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin <b class="caret"></b></a>
 								<ul class="dropdown-menu">
 									<li>
-										<?=$this -> Html -> link('Cargar Multimedia', array('controller' => 'multimedia', 'action' => 'add')) ?>
+										<?=$this -> Html -> link('Cargar Multimedia', array('controller' => 'multimedia', 'action' => 'cargar')) ?>
 									</li>
 									<!--
 									<li class="divider"></li>
