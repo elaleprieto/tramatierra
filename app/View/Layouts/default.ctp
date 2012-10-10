@@ -118,15 +118,6 @@
 									<li>
 										<?=$this -> Html -> link('Cargar Multimedia', array('controller' => 'multimedia', 'action' => 'add')) ?>
 									</li>
-									<li>
-										<?=$this -> Html -> link('Cargar Videos', array('controller' => 'secciones', 'action' => 'view', 4)) ?>
-									</li>
-									<li>
-										<?=$this -> Html -> link('Cargar Audios', array('controller' => 'secciones', 'action' => 'view', 5)) ?>
-									</li>
-									<li>
-										<?=$this -> Html -> link('Cargar Publicaciones', array('controller' => 'secciones', 'action' => 'view', 6)) ?>
-									</li>
 									<!--
 									<li class="divider"></li>
 									<li class="nav-header">Nav header</li>
