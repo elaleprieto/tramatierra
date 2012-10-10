@@ -16,19 +16,23 @@ $this -> assign('botones', $botones);
 <div class="secciones view">
 	<!-- Example row of columns -->
 	<div class="row">
-		<div class="span4">
+		<div class="span6">
 			<h2>Fotos</h2>
 			<p class="fotos">
 				<?php
-				$imagen = isset($seccion['Multimedia']) && sizeof($seccion['Multimedia']) > 0 ? $seccion['Multimedia'][0]['url'] : 'http://lorempixel.com/450/200/nature?' . time();
-				echo $this -> Html -> image($imagen);
+				if (isset($seccion['Multimedia']) && sizeof($seccion['Multimedia']) > 0) {
+					$multimedia = $seccion['Multimedia'][0];
+					$imagen = $multimedia['archivo'] ? $this -> Html -> url('/mm/', true) . $multimedia['archivo'] : ($multimedia['url'] ? $multimedia['url'] : FALSE);
+				}
+				// echo $this -> Html -> image(isset($imagen) && $imagen ? $imagen : 'http://lorempixel.com/450/200/nature?' . time());
 				?>
+				<img src="<?=isset($imagen) && $imagen ? $imagen : 'http://lorempixel.com/450/200/nature?' . time() ?>" />
 			</p>
 			<p>
 				<a class="btn" href="#">Ver &raquo;</a>
 			</p>
 		</div>
-		<div class="span4">
+		<div class="span6">
 			<h2>Videos</h2>
 			<p>
 				<?= $this -> Html -> image('http://lorempixel.com/450/200/technics?' . time()); ?>
@@ -37,7 +41,7 @@ $this -> assign('botones', $botones);
 				<a class="btn" href="#">Ver &raquo;</a>
 			</p>
 		</div>
-		<div class="span4">
+		<div class="span6">
 			<h2>Audios</h2>
 			<p>
 				<?= $this -> Html -> image('http://lorempixel.com/450/200/nightlife?' . time()); ?>
@@ -46,7 +50,7 @@ $this -> assign('botones', $botones);
 				<a class="btn" href="#">Ver &raquo;</a>
 			</p>
 		</div>
-		<div class="span4">
+		<div class="span6">
 			<h2>Publicaciones</h2>
 			<p>
 				<?= $this -> Html -> image('http://lorempixel.com/450/200/people?' . time()); ?>
@@ -67,7 +71,7 @@ $this -> assign('botones', $botones);
 		<li><?php echo $this -> Html -> link(__('List Areas'), array('controller' => 'areas', 'action' => 'index')); ?> </li>
 		<li><?php echo $this -> Html -> link(__('New Area'), array('controller' => 'areas', 'action' => 'add')); ?> </li>
 		<li><?php echo $this -> Html -> link(__('List Multimedia'), array('controller' => 'multimedia', 'action' => 'index')); ?> </li>
-		<li><?php echo $this -> Html -> link(__('New Multimedia'), array('controller' => 'multimedia', 'action' => 'add')); ?> </li>
+		<li><?php echo $this -> Html -> link(__('New Multimedia'), array('controller' => 'multimedia', 'action' => 'cargar')); ?> </li>
 	</ul>
 </div>
 <div class="related">
@@ -152,7 +156,7 @@ $this -> assign('botones', $botones);
 -->
 	<div class="actions">
 		<ul>
-			<li><?php echo $this -> Html -> link(__('New Multimedia'), array('controller' => 'multimedia', 'action' => 'add')); ?> </li>
+			<li><?php echo $this -> Html -> link(__('New Multimedia'), array('controller' => 'multimedia', 'action' => 'cargar')); ?> </li>
 		</ul>
 	</div>
 </div>
