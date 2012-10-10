@@ -48,8 +48,10 @@ class MultimediaController extends AppController {
 			}
 		}
 		$multimediaCategorias = $this -> Multimedia -> MultimediaCategoria -> find('list');
+		$areas = $this -> Multimedia -> Area -> find('list');
 		$secciones = $this -> Multimedia -> Seccion -> find('list');
-		$this -> set(compact('multimediaCategorias', 'secciones'));
+		$subareas = $this -> Multimedia -> Subarea -> find('list');
+		$this -> set(compact('multimediaCategorias', 'areas', 'secciones', 'subareas'));
 	}
 
 	/**
@@ -75,8 +77,10 @@ class MultimediaController extends AppController {
 			$this -> request -> data = $this -> Multimedia -> read(null, $id);
 		}
 		$multimediaCategorias = $this -> Multimedia -> MultimediaCategoria -> find('list');
+		$areas = $this -> Multimedia -> Area -> find('list');
 		$secciones = $this -> Multimedia -> Seccion -> find('list');
-		$this -> set(compact('multimediaCategorias', 'secciones'));
+		$subareas = $this -> Multimedia -> Subarea -> find('list');
+		$this -> set(compact('multimediaCategorias', 'areas', 'secciones', 'subareas'));
 	}
 
 	/**
@@ -127,10 +131,10 @@ class MultimediaController extends AppController {
 				$this -> Session -> setFlash(__('The multimedia could not be saved. Please, try again.'));
 			}
 		}
-
 		$multimediaCategorias = $this -> Multimedia -> MultimediaCategoria -> find('list');
+		$areas = $this -> Multimedia -> Area -> find('list');
 		$secciones = $this -> Multimedia -> Seccion -> find('list');
-		$this -> set(compact('multimediaCategorias', 'secciones'));
+		$subareas = $this -> Multimedia -> Subarea -> find('list');
+		$this -> set(compact('multimediaCategorias', 'areas', 'secciones', 'subareas'));
 	}
-
 }

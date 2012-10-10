@@ -6,9 +6,12 @@
 		echo $this->Form->input('name');
 		echo $this->Form->input('title');
 		echo $this->Form->input('descripcion');
+		echo $this->Form->input('archivo');
 		echo $this->Form->input('url');
 		echo $this->Form->input('multimedia_categoria_id');
+		echo $this->Form->input('Area');
 		echo $this->Form->input('Seccion');
+		echo $this->Form->input('Subarea');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>
@@ -20,7 +23,11 @@
 		<li><?php echo $this->Html->link(__('List Multimedia'), array('action' => 'index')); ?></li>
 		<li><?php echo $this->Html->link(__('List Multimedia Categorias'), array('controller' => 'multimedia_categorias', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Multimedia Categoria'), array('controller' => 'multimedia_categorias', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Areas'), array('controller' => 'areas', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Area'), array('controller' => 'areas', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Secciones'), array('controller' => 'secciones', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Seccion'), array('controller' => 'secciones', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Subareas'), array('controller' => 'subareas', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Subarea'), array('controller' => 'subareas', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
