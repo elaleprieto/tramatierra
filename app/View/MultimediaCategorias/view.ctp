@@ -11,9 +11,9 @@
 			<?php echo h($multimediaCategoria['MultimediaCategoria']['name']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Titulo'); ?></dt>
+		<dt><?php echo __('Title'); ?></dt>
 		<dd>
-			<?php echo h($multimediaCategoria['MultimediaCategoria']['titulo']); ?>
+			<?php echo h($multimediaCategoria['MultimediaCategoria']['title']); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Created'); ?></dt>

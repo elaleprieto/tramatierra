@@ -4,7 +4,7 @@
 		<legend><?php echo __('Add Multimedia Categoria'); ?></legend>
 	<?php
 		echo $this->Form->input('name');
-		echo $this->Form->input('titulo');
+		echo $this->Form->input('title');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>

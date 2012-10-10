@@ -4,7 +4,7 @@
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('name'); ?></th>
-			<th><?php echo $this->Paginator->sort('titulo'); ?></th>
+			<th><?php echo $this->Paginator->sort('title'); ?></th>
 			<th><?php echo $this->Paginator->sort('created'); ?></th>
 			<th><?php echo $this->Paginator->sort('modified'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
@@ -14,7 +14,7 @@
 	<tr>
 		<td><?php echo h($multimediaCategoria['MultimediaCategoria']['id']); ?>&nbsp;</td>
 		<td><?php echo h($multimediaCategoria['MultimediaCategoria']['name']); ?>&nbsp;</td>
-		<td><?php echo h($multimediaCategoria['MultimediaCategoria']['titulo']); ?>&nbsp;</td>
+		<td><?php echo h($multimediaCategoria['MultimediaCategoria']['title']); ?>&nbsp;</td>
 		<td><?php echo h($multimediaCategoria['MultimediaCategoria']['created']); ?>&nbsp;</td>
 		<td><?php echo h($multimediaCategoria['MultimediaCategoria']['modified']); ?>&nbsp;</td>
 		<td class="actions">
