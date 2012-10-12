@@ -107,7 +107,7 @@ class MultimediaController extends AppController {
 		$this -> redirect(array('action' => 'index'));
 	}
 
-	public function cargar() {
+	public function agregar() {
 		if ($this -> request -> is('post')) {
 			$this -> Multimedia -> create();
 			$this -> Multimedia -> set($this -> request -> data);
