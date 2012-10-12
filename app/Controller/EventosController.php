@@ -47,6 +47,10 @@ class EventosController extends AppController {
 				$this->Session->setFlash(__('The evento could not be saved. Please, try again.'));
 			}
 		}
+		$areas = $this->Evento->Area->find('list');
+		$secciones = $this->Evento->Seccion->find('list');
+		$subareas = $this->Evento->Subarea->find('list');
+		$this->set(compact('areas', 'secciones', 'subareas'));
 	}
 
 /**
@@ -71,6 +75,10 @@ class EventosController extends AppController {
 		} else {
 			$this->request->data = $this->Evento->read(null, $id);
 		}
+		$areas = $this->Evento->Area->find('list');
+		$secciones = $this->Evento->Seccion->find('list');
+		$subareas = $this->Evento->Subarea->find('list');
+		$this->set(compact('areas', 'secciones', 'subareas'));
 	}
 
 /**
@@ -96,6 +104,105 @@ class EventosController extends AppController {
 		$this->Session->setFlash(__('Evento was not deleted'));
 		$this->redirect(array('action' => 'index'));
 	}
+
+/**
+ * admin_index method
+ *
+ * @return void
+ */
+	public function admin_index() {
+		$this->Evento->recursive = 0;
+		$this->set('eventos', $this->paginate());
+	}
+
+/**
+ * admin_view method
+ *
+ * @throws NotFoundException
+ * @param string $id
+ * @return void
+ */
+	public function admin_view($id = null) {
+		$this->Evento->id = $id;
+		if (!$this->Evento->exists()) {
+			throw new NotFoundException(__('Invalid evento'));
+		}
+		$this->set('evento', $this->Evento->read(null, $id));
+	}
+
+/**
+ * admin_add method
+ *
+ * @return void
+ */
+	public function admin_add() {
+		if ($this->request->is('post')) {
+			$this->Evento->create();
+			if ($this->Evento->save($this->request->data)) {
+				$this->Session->setFlash(__('The evento has been saved'));
+				$this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash(__('The evento could not be saved. Please, try again.'));
+			}
+		}
+		$areas = $this->Evento->Area->find('list');
+		$secciones = $this->Evento->Seccion->find('list');
+		$subareas = $this->Evento->Subarea->find('list');
+		$this->set(compact('areas', 'secciones', 'subareas'));
+	}
+
+/**
+ * admin_edit method
+ *
+ * @throws NotFoundException
+ * @param string $id
+ * @return void
+ */
+	public function admin_edit($id = null) {
+		$this->Evento->id = $id;
+		if (!$this->Evento->exists()) {
+			throw new NotFoundException(__('Invalid evento'));
+		}
+		if ($this->request->is('post') || $this->request->is('put')) {
+			if ($this->Evento->save($this->request->data)) {
+				$this->Session->setFlash(__('The evento has been saved'));
+				$this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash(__('The evento could not be saved. Please, try again.'));
+			}
+		} else {
+			$this->request->data = $this->Evento->read(null, $id);
+		}
+		$areas = $this->Evento->Area->find('list');
+		$secciones = $this->Evento->Seccion->find('list');
+		$subareas = $this->Evento->Subarea->find('list');
+		$this->set(compact('areas', 'secciones', 'subareas'));
+	}
+
+/**
+ * admin_delete method
+ *
+ * @throws MethodNotAllowedException
+ * @throws NotFoundException
+ * @param string $id
+ * @return void
+ */
+	public function admin_delete($id = null) {
+		if (!$this->request->is('post')) {
+			throw new MethodNotAllowedException();
+		}
+		$this->Evento->id = $id;
+		if (!$this->Evento->exists()) {
+			throw new NotFoundException(__('Invalid evento'));
+		}
+		if ($this->Evento->delete()) {
+			$this->Session->setFlash(__('Evento deleted'));
+			$this->redirect(array('action' => 'index'));
+		}
+		$this->Session->setFlash(__('Evento was not deleted'));
+		$this->redirect(array('action' => 'index'));
+	}
+	
 	
 /**
  * agregar method
@@ -112,5 +219,9 @@ class EventosController extends AppController {
 				$this->Session->setFlash(__('The evento could not be saved. Please, try again.'));
 			}
 		}
+		$areas = $this->Evento->Area->find('list');
+		$secciones = $this->Evento->Seccion->find('list');
+		$subareas = $this->Evento->Subarea->find('list');
+		$this->set(compact('areas', 'secciones', 'subareas'));
 	}
 }
