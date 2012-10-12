@@ -3,8 +3,8 @@
 	<table cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
-			<th><?php echo $this->Paginator->sort('nombre'); ?></th>
-			<th><?php echo $this->Paginator->sort('titulo'); ?></th>
+			<th><?php echo $this->Paginator->sort('name'); ?></th>
+			<th><?php echo $this->Paginator->sort('title'); ?></th>
 			<th><?php echo $this->Paginator->sort('descripcion'); ?></th>
 			<th><?php echo $this->Paginator->sort('area_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('created'); ?></th>
@@ -15,8 +15,8 @@
 	foreach ($subareas as $subarea): ?>
 	<tr>
 		<td><?php echo h($subarea['Subarea']['id']); ?>&nbsp;</td>
-		<td><?php echo h($subarea['Subarea']['nombre']); ?>&nbsp;</td>
-		<td><?php echo h($subarea['Subarea']['titulo']); ?>&nbsp;</td>
+		<td><?php echo h($subarea['Subarea']['name']); ?>&nbsp;</td>
+		<td><?php echo h($subarea['Subarea']['title']); ?>&nbsp;</td>
 		<td><?php echo h($subarea['Subarea']['descripcion']); ?>&nbsp;</td>
 		<td>
 			<?php echo $this->Html->link($subarea['Area']['id'], array('controller' => 'areas', 'action' => 'view', $subarea['Area']['id'])); ?>

@@ -8,12 +8,12 @@
 		</dd>
 		<dt><?php echo __('Nombre'); ?></dt>
 		<dd>
-			<?php echo h($subarea['Subarea']['nombre']); ?>
+			<?php echo h($subarea['Subarea']['name']); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Titulo'); ?></dt>
 		<dd>
-			<?php echo h($subarea['Subarea']['titulo']); ?>
+			<?php echo h($subarea['Subarea']['title']); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Descripcion'); ?></dt>

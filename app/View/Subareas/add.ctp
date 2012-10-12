@@ -3,8 +3,8 @@
 	<fieldset>
 		<legend><?php echo __('Add Subarea'); ?></legend>
 	<?php
-		echo $this->Form->input('nombre');
-		echo $this->Form->input('titulo');
+		echo $this->Form->input('name');
+		echo $this->Form->input('title');
 		echo $this->Form->input('descripcion');
 		echo $this->Form->input('area_id');
 	?>
