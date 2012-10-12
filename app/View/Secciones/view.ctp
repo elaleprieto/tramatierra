@@ -61,6 +61,7 @@ $this -> assign('botones', $botones);
 		</div>
 	</div>
 </div>
+<?php /*
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
@@ -160,3 +161,4 @@ $this -> assign('botones', $botones);
 		</ul>
 	</div>
 </div>
+*/ ?>
