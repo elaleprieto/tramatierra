@@ -17,7 +17,7 @@ $this -> assign('botones', $botones);
 <div class="areas view">
 <!-- Example row of columns -->
 	<div class="row">
-		<div class="span4">
+		<div class="span6">
 			<h2>Fotos</h2>
 			<p class="fotos">
 				<?php
@@ -29,7 +29,7 @@ $this -> assign('botones', $botones);
 				<a class="btn" href="#">Ver &raquo;</a>
 			</p>
 		</div>
-		<div class="span4">
+		<div class="span6">
 			<h2>Videos</h2>
 			<p>
 				<?= $this -> Html -> image('http://lorempixel.com/450/200/technics?' . time()); ?>
@@ -38,7 +38,7 @@ $this -> assign('botones', $botones);
 				<a class="btn" href="#">Ver &raquo;</a>
 			</p>
 		</div>
-		<div class="span4">
+		<div class="span6">
 			<h2>Audios</h2>
 			<p>
 				<?= $this -> Html -> image('http://lorempixel.com/450/200/nightlife?' . time()); ?>
@@ -47,7 +47,7 @@ $this -> assign('botones', $botones);
 				<a class="btn" href="#">Ver &raquo;</a>
 			</p>
 		</div>
-		<div class="span4">
+		<div class="span6">
 			<h2>Publicaciones</h2>
 			<p>
 				<?= $this -> Html -> image('http://lorempixel.com/450/200/people?' . time()); ?>
@@ -58,6 +58,7 @@ $this -> assign('botones', $botones);
 		</div>
 	</div>
 </div>
+<?php /* ?>
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
@@ -112,3 +113,4 @@ $this -> assign('botones', $botones);
 		</ul>
 	</div>
 </div>
+*/ ?>
