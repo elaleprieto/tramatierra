@@ -96,4 +96,21 @@ class EventosController extends AppController {
 		$this->Session->setFlash(__('Evento was not deleted'));
 		$this->redirect(array('action' => 'index'));
 	}
+	
+/**
+ * agregar method
+ *
+ * @return void
+ */
+	public function agregar() {
+		if ($this->request->is('post')) {
+			$this->Evento->create();
+			if ($this->Evento->save($this->request->data)) {
+				$this->Session->setFlash(__('The evento has been saved'));
+				$this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash(__('The evento could not be saved. Please, try again.'));
+			}
+		}
+	}
 }
