@@ -129,7 +129,7 @@ class MultimediaController extends AppController {
 
 			if ($this -> Multimedia -> save()) {
 				$this -> Session -> setFlash(__('The multimedia has been saved'));
-				$this -> redirect(array('action' => 'index'));
+				// $this -> redirect(array('action' => 'index'));
 			} else {
 				$this -> Session -> setFlash(__('The multimedia could not be saved. Please, try again.'));
 			}
