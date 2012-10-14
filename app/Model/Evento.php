@@ -29,7 +29,7 @@ class Evento extends AppModel {
 		'title' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
+				'message' => 'Debe introducir un título',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -39,7 +39,7 @@ class Evento extends AppModel {
 		'descripcion' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
+				'message' => 'Debe introducir una descripción',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -49,7 +49,7 @@ class Evento extends AppModel {
 		'fecha' => array(
 			'date' => array(
 				'rule' => array('date'),
-				//'message' => 'Your custom message here',
+				'message' => 'Debe introducir una fecha válida',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -59,7 +59,7 @@ class Evento extends AppModel {
 		'hora' => array(
 			'time' => array(
 				'rule' => array('time'),
-				//'message' => 'Your custom message here',
+				'message' => 'Debe introducir una hora válida',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -69,7 +69,7 @@ class Evento extends AppModel {
 		'lugar' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
+				'message' => 'Debe introducir un lugar',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
