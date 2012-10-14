@@ -1,4 +1,4 @@
-/* line 1, ../../sass/multimedias/cargar.scss */
+/* line 1, ../../sass/multimedias/agregar.scss */
 .hero-unit h1 {
   background-color: rgba(37, 63, 7, 0.5);
   color: #FFFFFF;
@@ -14,4 +14,9 @@
   text-align: right;
   width: 400px;
   padding-right: 15px;
+}
+
+/* line 18, ../../sass/multimedias/agregar.scss */
+p.text-error {
+  margin: 0;
 }

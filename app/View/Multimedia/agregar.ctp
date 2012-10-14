@@ -9,8 +9,14 @@ echo $this -> Html -> css('multimedias/agregar');
 		<div class="span6">
 			<?php
 			// echo $this -> Form -> input('name', array('class' => 'span6', 'label' => FALSE, 'placeholder' => __('Name')));
-			echo $this -> Form -> input('title', array('class' => 'span6', 'label' => FALSE, 'placeholder' => __('Title')));
-			echo $this -> Form -> input('archivo', array('class' => 'span6', 'type' => 'file', 'label' => FALSE, 'placeholder' => __('Archivo')));
+			if ($this -> Form -> isFieldError('title')) {
+				echo $this -> Form -> error('title', $this -> Form -> tagIsInvalid(), array('class' => FALSE, 'wrap' => 'p class="text-error"'));
+			}
+			echo $this -> Form -> text('title', array('class' => 'span6', 'label' => FALSE, 'placeholder' => __('Title')));
+			if ($this -> Form -> isFieldError('archivo')) {
+				echo $this -> Form -> error('archivo', $this -> Form -> tagIsInvalid(), array('class' => FALSE, 'wrap' => 'p class="text-error"'));
+			}
+			echo $this -> Form -> file('archivo', array('class' => 'span6', 'type' => 'file', 'label' => FALSE, 'placeholder' => __('Archivo')));
 			// echo $this -> Form -> input('url', array('class' => 'span6', 'label' => FALSE, 'placeholder' => __('URL')));
 			
 			?>
