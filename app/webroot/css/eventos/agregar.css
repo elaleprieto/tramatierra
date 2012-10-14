@@ -15,3 +15,8 @@
   width: 400px;
   padding-right: 15px;
 }
+
+/* line 18, ../../sass/eventos/agregar.scss */
+p.text-error {
+  margin: 0;
+}

@@ -10,14 +10,14 @@ echo $this -> Html -> css('eventos/agregar');
 		<?php
 		// echo $this -> Form -> input('name', array('class' => 'span6', 'label' => FALSE, 'placeholder' => __('Name')));
 		if ($this -> Form -> isFieldError('title')) {
-			echo $this -> Form -> error('title', $this -> Form -> tagIsInvalid(), array('class' => FALSE, 'wrap' => 'p class="text-warning"'));
+			echo $this -> Form -> error('title', $this -> Form -> tagIsInvalid(), array('class' => FALSE, 'wrap' => 'p class="text-error"'));
 		}
 		echo $this -> Form -> text('title', array('class' => 'span6', 'placeholder' => __('Title')));
 		?>
 		<div class="row">
 			<?php 
 			if ($this -> Form -> isFieldError('fecha')) {
-				echo $this->Html->div('span6', $this -> Form -> error('fecha', $this -> Form -> tagIsInvalid(), array('class' => FALSE, 'wrap' => 'p class="text-warning"')));
+				echo $this->Html->div('span6', $this -> Form -> error('fecha', $this -> Form -> tagIsInvalid(), array('class' => FALSE, 'wrap' => 'p class="text-error"')));
 			}
 			?>
 			<div class="span2">
@@ -33,7 +33,7 @@ echo $this -> Html -> css('eventos/agregar');
 		<div class="row">
 			<?php 
 			if ($this -> Form -> isFieldError('hora')) {
-				echo $this->Html->div('span6', $this -> Form -> error('hora', $this -> Form -> tagIsInvalid(), array('class' => FALSE, 'wrap' => 'p class="text-warning"')));
+				echo $this->Html->div('span6', $this -> Form -> error('hora', $this -> Form -> tagIsInvalid(), array('class' => FALSE, 'wrap' => 'p class="text-error"')));
 			}
 			?>
 			<div class="span3">
@@ -45,13 +45,13 @@ echo $this -> Html -> css('eventos/agregar');
 		</div>
 		<?php 
 		if ($this -> Form -> isFieldError('lugar')) {
-			echo $this -> Form -> error('lugar', $this -> Form -> tagIsInvalid(), array('class' => FALSE, 'wrap' => 'p class="text-warning"'));
+			echo $this -> Form -> error('lugar', $this -> Form -> tagIsInvalid(), array('class' => FALSE, 'wrap' => 'p class="text-error"'));
 		}
 		echo $this -> Form -> text('lugar', array('class' => 'span6', 'placeholder' => __('Lugar')));
 		?>
 		<?php 
 		if ($this -> Form -> isFieldError('descripcion')) {
-			echo $this -> Form -> error('descripcion', $this -> Form -> tagIsInvalid(), array('class' => FALSE, 'wrap' => 'p class="text-warning"'));
+			echo $this -> Form -> error('descripcion', $this -> Form -> tagIsInvalid(), array('class' => FALSE, 'wrap' => 'p class="text-error"'));
 		}
 		echo $this -> Form -> textarea('descripcion', array('class' => 'span6', 'rows' => '5', 'placeholder' => __('Descripción')));
 		?>
@@ -59,7 +59,7 @@ echo $this -> Html -> css('eventos/agregar');
 	<div class="span6">
 		<?php 
 		if ($this -> Form -> isFieldError('resumen')) {
-			echo $this->Html->div('span6', $this -> Form -> error('resumen', $this -> Form -> tagIsInvalid(), array('class' => FALSE, 'wrap' => 'p class="text-warning"')));
+			echo $this->Html->div('span6', $this -> Form -> error('resumen', $this -> Form -> tagIsInvalid(), array('class' => FALSE, 'wrap' => 'p class="text-error"')));
 		}
 		echo $this -> Form -> textarea('resumen', array('class' => 'span6', 'rows' => '13', 'placeholder' => __('Resumen')));
 		?>

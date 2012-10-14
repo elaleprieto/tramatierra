@@ -1,16 +1,20 @@
 .hero-unit h1 {
-   background-color: rgba(37, 63, 7, 0.5);
-   color: #FFFFFF;
-    float: right;
-    font-family: sans-serif;
-    font-size: 2em;
-    font-style: italic;
-    font-weight: normal;
-    letter-spacing: 0;
-    line-height: 2;
-    margin-bottom: 0;
-    margin-top: -84px;
-    text-align: right;
-    width: 400px;
-    padding-right: 15px;
+  background-color: rgba(37, 63, 7, 0.5);
+  color: #FFFFFF;
+  float: right;
+  font-family: sans-serif;
+  font-size: 2em;
+  font-style: italic;
+  font-weight: normal;
+  letter-spacing: 0;
+  line-height: 2;
+  margin-bottom: 0;
+  margin-top: -84px;
+  text-align: right;
+  width: 400px;
+  padding-right: 15px;
+}
+
+p.text-error {
+  margin: 0;
 }
