@@ -26,7 +26,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>Trama Tierra<?php echo ': ' . $title_for_layout; ?></title>
+		<title>Tramatierra<?php echo ': ' . $title_for_layout; ?></title>
 		<meta name="description" content="Trama Tierra es una organización social sin fines de lucro de la Ciudad de Santa Fe.">
 		<meta name="viewport" content="width=device-width">
 
@@ -60,14 +60,11 @@
 				<div class="container">
 					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
 					<!-- <a class="brand" href="#">Trama Tierra</a> -->
-					<?=$this -> Html -> link('Trama Tierra', '/', array('class' => 'brand')) ?>
+					<?=$this -> Html -> link('Tramatierra', '/', array('class' => 'brand')) ?>
 					<div class="nav-collapse collapse">
 						<ul class="nav">
 							<li <?=($this -> request -> controller == 'pages' && $this -> request -> action == 'display' && $this -> request -> pass[0] == 'inicio') ? 'class="active"' : 'class=""' ?>>
 								<?=$this -> Html -> link('Inicio', '/') ?>
-							</li>
-							<li>
-								<a href="#about">Acerca de</a>
 							</li>
 							<li>
 								<a href="#contact">Contacto</a>
@@ -173,7 +170,7 @@
 			<hr />
 			<footer>
 				<p>
-					&copy; 2012 Trama Tierra.
+					&copy; 2012 Tramatierra.
 				</p>
 				<p>
 					Usted es libre de: copiar, distribuir, exhibir, y ejecutar la obra y hacer obras derivadas bajo las siguientes condiciones: Atribución / No comercial / Compartir igual / Usted debe atribuir la obra en la forma especificada por el autor o el licenciante.
