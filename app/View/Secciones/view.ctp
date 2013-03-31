@@ -1,21 +1,131 @@
 <?php
+
+// debug($seccion);
+
 echo $this -> Html -> css('secciones/view');
 $this -> set('title_for_layout', $seccion['Seccion']['title']);
 
 $botones = '';
 if (!empty($seccion['Area'])) :
+	$botones = ' | ';
 	foreach ($seccion['Area'] as $area) :
-		$botones .= '<span>' . $this -> Html -> link($area['title'] . ' &raquo;', array('controller' => 'areas', 'action' => 'view', $area['id']), array('class' => 'btn btn-primary btn-large', 'escape' => FALSE)) . '</span>';
+		// $botones .= '<span>' . $this -> Html -> link($area['title'] . ' &raquo;', array('controller' => 'areas', 'action' => 'view', $area['id']), array('class' => 'btn btn-primary btn-large', 'escape' => FALSE)) . '</span>';
+		$botones .= $this->Html->link(mb_strtoupper($area['title'], 'UTF-8'), array('controller' => 'areas', 'action' => 'view', $area['id']), array('class' => 'areaButton', 'escape' => FALSE));
+		$botones .= ' | ';
 	endforeach;
 endif;
 $this -> assign('banner', h($seccion['Seccion']['banner']));
-$this -> assign('titulo', h($seccion['Seccion']['title']));
+$this -> assign('titulo', mb_strtoupper(h($seccion['Seccion']['title']), 'UTF-8'));
 $this -> assign('descripcion-general', '<p>' . h($seccion['Seccion']['descripcion']) . '</p>');
 $this -> assign('botones', $botones);
 ?>
-<div class="secciones view">
+
+<div class="row-fluid">
+	<div class="span10 categoria">
+		<div class="row-fluid categoriaTitulo">
+			<div class="span5 categoriaNombre">
+				fotos
+			</div>
+			<div class="span7 categoriaLinea"></div>
+		</div>
+		<div class="row-fluid">
+			<div class="span8"><?= $this -> Html -> image('http://lorempixel.com/232/173/nature?'.time()); ?></div>
+			<div class="row-fluid">
+				<div class="span12 articuloTitulo">
+					<div class="row-fluid">
+						<div class="span6">
+							<span>Solar & LibreBus 2012</span>
+						</div>
+						<div class="span6 categoriaArea">
+							<?= $this -> Html -> image('area/etiqueta/culturaLibre.png'); ?>
+							<?= $this -> Html -> image('area/etiqueta/energia.png'); ?>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row-fluid">
+	<div class="span10 categoria">
+		<div class="row-fluid categoriaTitulo">
+			<div class="span5 categoriaNombre">
+				videos
+			</div>
+			<div class="span7 categoriaLinea"></div>
+		</div>
+		<div class="row-fluid">
+			<div class="span8"><?= $this -> Html -> image('http://lorempixel.com/232/173/nature?'.time()); ?></div>
+			<div class="row-fluid">
+				<div class="span12 articuloTitulo">
+					<div class="row-fluid">
+						<div class="span6">
+							<span>Solar 2012</span>
+						</div>
+						<div class="span6 categoriaArea">
+							<?= $this -> Html -> image('area/etiqueta/energia.png'); ?>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row-fluid">
+	<div class="span5 categoria">
+		<div class="row-fluid categoriaTitulo">
+			<div class="span5 categoriaNombre">
+				publicaciones
+			</div>
+			<div class="span7 categoriaLinea"></div>
+		</div>
+		<div class="row-fluid">
+			<div class="span8"><?= $this -> Html -> image('http://lorempixel.com/115/173/nature?'.time()); ?></div>
+			<div class="row-fluid">
+				<div class="span12 articuloTitulo">
+					<div class="row-fluid">
+						<div class="span6">
+							<span>Reciclado de Agua</span>
+						</div>
+						<div class="span6 categoriaArea">
+							<?= $this -> Html -> image('area/etiqueta/agua.png'); ?>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="offset1 span4 categoriaTitulo">
+		<div class="row-fluid categoriaTitulo">
+			<div class="span5 categoriaNombre">
+				audios
+			</div>
+			<div class="span7 categoriaLinea"></div>
+		</div>
+		<div class="row-fluid">
+			<div class="span8"><?= $this -> Html -> image('http://lorempixel.com/173/173/nature?'.time()); ?></div>
+			<div class="row-fluid">
+				<div class="span12 articuloTitulo">
+					<div class="row-fluid">
+						<div class="span6">
+							<span>Reciclado de Agua</span>
+						</div>
+						<div class="span6 categoriaArea">
+							<?= $this -> Html -> image('area/etiqueta/agua.png'); ?>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<!-- Diseño viejo -->
+<!-- <div class="secciones view"> -->
 	<!-- Example row of columns -->
-	<div class="row">
+	<!-- <div class="row">
 		<div class="span6">
 			<h2>Fotos</h2>
 			<p class="fotos">
@@ -60,7 +170,7 @@ $this -> assign('botones', $botones);
 			</p>
 		</div>
 	</div>
-</div>
+</div> -->
 <?php /*
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>

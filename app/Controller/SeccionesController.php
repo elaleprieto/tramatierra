@@ -29,6 +29,7 @@ class SeccionesController extends AppController {
 		if (!$this -> Seccion -> exists()) {
 			throw new NotFoundException(__('Invalid seccion'));
 		}
+		$this->layout = 'seccion';
 		$this -> set('seccion', $this -> Seccion -> read(null, $id));
 		// $this -> set('fotos', $this -> Seccion -> Multimedia -> find('list'));
 	}

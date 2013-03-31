@@ -3288,14 +3288,14 @@
   src: url("../files/Dekar.otf") format("truetype");
 }
 
-/* line 14, ../sass/trama.sass */
+/* line 12, ../sass/trama.sass */
 #bannerTop {
   background-image: url("../img/bg_principal.jpg");
   background-repeat: no-repeat;
   padding: 130px 60px 0px;
 }
 
-/* line 19, ../sass/trama.sass */
+/* line 17, ../sass/trama.sass */
 #leyendaButtonDiv {
   background-image: url("../img/top/masBackground.png");
   background-repeat: repeat-x;
@@ -3303,7 +3303,7 @@
   text-align: right;
 }
 
-/* line 25, ../sass/trama.sass */
+/* line 23, ../sass/trama.sass */
 #leyendaTop {
   margin-bottom: 0px;
   overflow: hidden;
@@ -3311,7 +3311,7 @@
   height: 1.2em;
 }
 
-/* line 31, ../sass/trama.sass */
+/* line 29, ../sass/trama.sass */
 #lineaFinal {
   background-color: #a1bb67;
   min-height: 1px !important;
@@ -3319,96 +3319,106 @@
   margin-bottom: 30px;
 }
 
-/* line 37, ../sass/trama.sass */
+/* line 35, ../sass/trama.sass */
 #plantaLogo {
   margin-right: 60px;
   text-align: right;
 }
 
-/* line 41, ../sass/trama.sass */
+/* line 39, ../sass/trama.sass */
 #redes {
   display: table;
   height: 250px;
 }
 
-/* line 45, ../sass/trama.sass */
+/* line 43, ../sass/trama.sass */
 #redesIcons {
   display: table-cell;
   position: relative;
   vertical-align: middle;
 }
 
-/* line 50, ../sass/trama.sass */
+/* line 48, ../sass/trama.sass */
 #sidebarAgua {
   background-image: url("../img/sidebar/agua.png");
 }
 
-/* line 53, ../sass/trama.sass */
+/* line 51, ../sass/trama.sass */
 #sidebarContacto {
   background-image: url("../img/sidebar/contacto.png");
 }
 
-/* line 56, ../sass/trama.sass */
+/* line 54, ../sass/trama.sass */
 #sidebarCulturaLibre {
   background-image: url("../img/sidebar/culturaLibre.png");
 }
 
-/* line 59, ../sass/trama.sass */
+/* line 57, ../sass/trama.sass */
+#sidebarEnergia {
+  background-image: url("../img/sidebar/energia.png");
+}
+
+/* line 60, ../sass/trama.sass */
 #sidebarGenero {
   background-image: url("../img/sidebar/genero.png");
 }
 
-/* line 62, ../sass/trama.sass */
+/* line 63, ../sass/trama.sass */
 #sidebarGestionResiduos {
   background-image: url("../img/sidebar/gestionDeResiduos.png");
 }
 
-/* line 65, ../sass/trama.sass */
+/* line 66, ../sass/trama.sass */
 #sidebarOnAgua {
   background-image: url("../img/sidebar/onAgua.png");
 }
 
-/* line 68, ../sass/trama.sass */
+/* line 69, ../sass/trama.sass */
 #sidebarOnContacto {
   background-image: url("../img/sidebar/onContacto.png");
 }
 
-/* line 71, ../sass/trama.sass */
+/* line 72, ../sass/trama.sass */
 #sidebarOnCulturaLibre {
   background-image: url("../img/sidebar/onCulturaLibre.png");
 }
 
-/* line 74, ../sass/trama.sass */
+/* line 75, ../sass/trama.sass */
+#sidebarOnEnergia {
+  background-image: url("../img/sidebar/onEnergia.png");
+}
+
+/* line 78, ../sass/trama.sass */
 #sidebarOnGenero {
   background-image: url("../img/sidebar/onGenero.png");
 }
 
-/* line 77, ../sass/trama.sass */
+/* line 81, ../sass/trama.sass */
 #sidebarOnGestionResiduos {
   background-image: url("../img/sidebar/onGestionDeResiduos.png");
 }
 
-/* line 80, ../sass/trama.sass */
+/* line 84, ../sass/trama.sass */
 #sidebarOnQuienesSomos {
   background-image: url("../img/sidebar/onQuienesSomos.png");
 }
 
-/* line 83, ../sass/trama.sass */
+/* line 87, ../sass/trama.sass */
 #sidebarOnSoberaniaAlimentaria {
   background-image: url("../img/sidebar/onSoberaniaAlimentaria.png");
 }
 
-/* line 86, ../sass/trama.sass */
+/* line 90, ../sass/trama.sass */
 #sidebarQuienesSomos {
   background-image: url("../img/sidebar/quienesSomos.png");
 }
 
-/* line 89, ../sass/trama.sass */
+/* line 93, ../sass/trama.sass */
 #sidebarSoberaniaAlimentaria {
   background-image: url("../img/sidebar/soberaniaAlimentaria.png");
 }
 
-/* line 92, ../sass/trama.sass */
+/* line 96, ../sass/trama.sass */
 .articuloTitulo {
   background-color: rgba(0, 0, 0, 0.7);
   color: white;
@@ -3420,18 +3430,18 @@
   position: relative;
 }
 
-/* line 102, ../sass/trama.sass */
+/* line 106, ../sass/trama.sass */
 .categoria {
   margin-bottom: 10px;
 }
 
-/* line 105, ../sass/trama.sass */
+/* line 109, ../sass/trama.sass */
 .categoriaArea {
   padding-right: 10px;
   text-align: right;
 }
 
-/* line 109, ../sass/trama.sass */
+/* line 113, ../sass/trama.sass */
 .categoriaLinea {
   background-image: url("../img/categoria/lineaHorizontal.png");
   background-repeat: repeat-x;
@@ -3439,7 +3449,7 @@
   min-height: 10pt !important;
 }
 
-/* line 115, ../sass/trama.sass */
+/* line 119, ../sass/trama.sass */
 .categoriaNombre {
   background-image: url("../img/categoria/fondo.png");
   color: white;
@@ -3449,58 +3459,58 @@
   text-align: center;
 }
 
-/* line 123, ../sass/trama.sass */
+/* line 127, ../sass/trama.sass */
 .categoriaTitulo {
   margin-bottom: 5px;
 }
 
-/* line 126, ../sass/trama.sass */
+/* line 130, ../sass/trama.sass */
 .container {
   background-image: url("../img/fondo.png");
   padding-top: 30px;
 }
 
-/* line 130, ../sass/trama.sass */
+/* line 134, ../sass/trama.sass */
 .leyendaTopHide {
   height: 1.2em;
 }
 
-/* line 134, ../sass/trama.sass */
+/* line 138, ../sass/trama.sass */
 .leyendaTopShow {
   height: auto;
 }
 
-/* line 138, ../sass/trama.sass */
+/* line 142, ../sass/trama.sass */
 .sidebar {
   height: 40px;
   margin-bottom: 10px;
   background-repeat: no-repeat;
 }
 
-/* line 143, ../sass/trama.sass */
+/* line 147, ../sass/trama.sass */
 .sidebarButton {
   width: 37px;
 }
 
-/* line 146, ../sass/trama.sass */
+/* line 150, ../sass/trama.sass */
 .sidebarOnButton {
   display: none;
 }
 
-/* line 149, ../sass/trama.sass */
+/* line 153, ../sass/trama.sass */
 .socialIconsBox {
   border-bottom: 0.5px solid #a1bb67;
   margin-top: 10px;
   text-align: center;
 }
 
-/* line 154, ../sass/trama.sass */
+/* line 158, ../sass/trama.sass */
 body {
   background-image: url("../img/fondoOscuro.png");
   padding-top: 0;
 }
 
-/* line 158, ../sass/trama.sass */
+/* line 162, ../sass/trama.sass */
 footer {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #608a04), color-stop(100%, #36570b));
   background-image: -webkit-linear-gradient(#608a04, #36570b);

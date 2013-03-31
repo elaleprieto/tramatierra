@@ -59,13 +59,31 @@
 		<div id="container-fluid" class="container">
 			<!-- <div id="content"> -->
 				<div class="row-fluid">
+					<div class="span6 offset1">
+						<h1 id="seccionTitle"><?php echo $this->fetch('titulo') ?></h1>
+					</div>
+					<div class="span4">
+						<h2 class="areaButton pull-right"><?php echo $this->fetch('botones') ?></h2>
+					</div>
+				</div>
+				<div class="row-fluid">
 					<div class="span10 offset1">
 						<?php echo $this -> Session -> flash(); ?>
+						<!-- ------------------------------------------------------------------------------------------------------
+									Definición del Banner como background-image del id bannerTop
+						------------------------------------------------------------------------------------------------------- -->
+						<?php if($this->fetch('banner')): ?>
+							<style>
+								#bannerTop {
+									background-image: url("<?php echo $this -> Html -> url('/img/', true) . h($this -> fetch('banner')); ?>.jpg");
+								}
+							</style>
+						<?php endif; ?>
 						<div id="bannerTop"></div>
+						
 						<div id="leyendaTop">
 							<div id="leyendaInside">
-								<p>Desde la intencionalidad fundante de aportar a la construcción de sociedades sustentables, realizamos múltiples acciones tanto en el ámbito estatal en sus diversos niveles como en las agendas de organizaciones y movimientos sociales, a los fines de cooperar en instalar debates amplios y democráticos.</p>
-								<p>Promovemos y generamos, entre otras actividades y en articulación con otros actores, estudios de caso, talleres, charlas públicas, campañas de sensibilización y difusión, investigaciones y materiales comunicativos, en tanto herramientas estratégicas que posibiliten cimentar alternativas válidas al modelo de desarrollo actual.</p>
+								<?php echo $this -> fetch('descripcion-general'); ?>
 							</div>
 						</div>
 						<div id="leyendaButtonDiv">

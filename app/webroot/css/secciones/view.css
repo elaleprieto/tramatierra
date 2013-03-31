@@ -1,4 +1,25 @@
-/* line 1, ../../sass/secciones/view.scss */
+@font-face {
+  font-family: "Existence-Light";
+  src: url("../../files/Existence-Light.otf") format("truetype");
+}
+
+/* line 8, ../../sass/secciones/view.sass */
+#seccionTitle, .areaButton {
+  font-family: Existence-Light;
+  color: #608a04;
+}
+
+/* line 12, ../../sass/secciones/view.sass */
+.areaButton {
+  font-size: 10pt;
+}
+/* line 15, ../../sass/secciones/view.sass */
+.areaButton:hover {
+  color: #36570b;
+  text-decoration: none;
+}
+
+/* line 20, ../../sass/secciones/view.sass */
 .fotos {
   text-align: center;
   overflow: hidden;
@@ -8,10 +29,10 @@
   max-weight: 450px;
 }
 
-/* line 13, ../../sass/secciones/view.scss */
+/* line 28, ../../sass/secciones/view.sass */
 .hero-unit h1 {
   background-color: rgba(37, 63, 7, 0.5);
-  color: #FFFFFF;
+  color: white;
   float: right;
   font-family: sans-serif;
   font-size: 2em;
