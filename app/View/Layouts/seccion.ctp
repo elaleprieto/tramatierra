@@ -39,7 +39,7 @@
 		<?php
 		echo $this -> Html -> meta('icon');
 
-		echo $this -> Html -> css(array('bootstrap', 'bootstrap-responsive', 'main', 'trama'));
+		echo $this -> Html -> css(array('bootstrap', 'bootstrap-responsive', 'trama'));
 
 		echo $this -> Html -> script('vendor/modernizr-2.6.1-respond-1.1.0.min');
 
@@ -250,7 +250,7 @@
 		<script async="async">
 			window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')
 		</script>
-		<?php echo $this -> Html -> script(array('vendor/bootstrap.min', 'plugins', 'main', 'trama'), array('async'=>'async')); ?>
+		<?php echo $this -> Html -> script(array('vendor/bootstrap.min', 'plugins', 'trama'), array('async'=>'async')); ?>
 		<?php echo $this -> fetch('script'); ?>
 		<script async="async">
 			var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']];
