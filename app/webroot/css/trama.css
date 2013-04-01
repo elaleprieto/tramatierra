@@ -3467,50 +3467,51 @@
 /* line 130, ../sass/trama.sass */
 .container {
   background-image: url("../img/fondo.png");
+  box-shadow: 0 0 30px #4d3e2f;
   padding-top: 30px;
 }
 
-/* line 134, ../sass/trama.sass */
+/* line 135, ../sass/trama.sass */
 .leyendaTopHide {
   height: 1.2em;
 }
 
-/* line 138, ../sass/trama.sass */
+/* line 139, ../sass/trama.sass */
 .leyendaTopShow {
   height: auto;
 }
 
-/* line 142, ../sass/trama.sass */
+/* line 143, ../sass/trama.sass */
 .sidebar {
   height: 40px;
   margin-bottom: 10px;
   background-repeat: no-repeat;
 }
 
-/* line 147, ../sass/trama.sass */
+/* line 148, ../sass/trama.sass */
 .sidebarButton {
   width: 37px;
 }
 
-/* line 150, ../sass/trama.sass */
+/* line 151, ../sass/trama.sass */
 .sidebarOnButton {
   display: none;
 }
 
-/* line 153, ../sass/trama.sass */
+/* line 154, ../sass/trama.sass */
 .socialIconsBox {
   border-bottom: 0.5px solid #a1bb67;
   margin-top: 10px;
   text-align: center;
 }
 
-/* line 158, ../sass/trama.sass */
+/* line 159, ../sass/trama.sass */
 body {
   background-image: url("../img/fondoOscuro.png");
   padding-top: 0;
 }
 
-/* line 162, ../sass/trama.sass */
+/* line 163, ../sass/trama.sass */
 footer {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #608a04), color-stop(100%, #36570b));
   background-image: -webkit-linear-gradient(#608a04, #36570b);
