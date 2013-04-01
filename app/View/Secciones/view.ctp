@@ -1,7 +1,5 @@
 <?php
-
 // debug($seccion);
-
 echo $this->Html->css('secciones/view', '', array('inline'=>FALSE));
 $this -> set('title_for_layout', $seccion['Seccion']['title']);
 
@@ -20,9 +18,8 @@ $this -> assign('titulo', mb_strtoupper(h($seccion['Seccion']['title']), 'UTF-8'
 $this -> assign('descripcion-general', '<p>' . h($seccion['Seccion']['descripcion']) . '</p>');
 $this -> assign('botones', $botones);
 ?>
-
 <div class="row-fluid">
-	<div class="span10 categoria">
+	<div class="span11 categoria">
 		<div class="row-fluid categoriaTitulo">
 			<div class="span5 categoriaNombre">
 				fotos
@@ -48,7 +45,7 @@ $this -> assign('botones', $botones);
 	</div>
 </div>
 <div class="row-fluid">
-	<div class="span10 categoria">
+	<div class="span11 categoria">
 		<div class="row-fluid categoriaTitulo">
 			<div class="span5 categoriaNombre">
 				videos
@@ -73,7 +70,7 @@ $this -> assign('botones', $botones);
 	</div>
 </div>
 <div class="row-fluid">
-	<div class="span5 categoria">
+	<div class="span6 categoria">
 		<div class="row-fluid categoriaTitulo">
 			<div class="span5 categoriaNombre">
 				publicaciones
