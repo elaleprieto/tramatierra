@@ -2,7 +2,7 @@
 
 // debug($seccion);
 
-echo $this -> Html -> css('secciones/view');
+echo $this->Html->css('secciones/view', '', array('inline'=>FALSE));
 $this -> set('title_for_layout', $seccion['Seccion']['title']);
 
 $botones = '';

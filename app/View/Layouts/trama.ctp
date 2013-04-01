@@ -45,7 +45,6 @@
 
 		echo $this -> fetch('meta');
 		echo $this -> fetch('css');
-		echo $this -> fetch('script');
 		?>
 	</head>
 	<body>
@@ -229,12 +228,13 @@
 
 		<?php echo $this -> element('sql_dump'); ?>
 
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-		<script>
-			window.jQuery || document.write('<script src="js/vendor/jquery-1.8.2.min.js"><\/script>')
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script async="async">
+			window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')
 		</script>
-		<?php echo $this -> Html -> script(array('vendor/bootstrap.min', 'plugins', 'main', 'trama')); ?>
-		<script>
+		<?php echo $this -> Html -> script(array('vendor/bootstrap.min', 'plugins', 'main', 'trama'), array('async'=>'async')) ?>
+		<?php echo $this -> fetch('script') ?>
+		<script async="async">
 			var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']];
 			( function(d, t) {
 					var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
