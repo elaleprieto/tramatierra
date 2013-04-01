@@ -30,7 +30,7 @@ $this -> assign('botones', $botones);
 			<div class="span7 categoriaLinea"></div>
 		</div>
 		<div class="row-fluid">
-			<div class="span8"><?= $this -> Html -> image('http://lorempixel.com/232/173/nature?'.time()); ?></div>
+			<div class="span8"><?= $this -> Html -> image('http://lorempixel.com/232/173/nature/'); ?></div>
 			<div class="row-fluid">
 				<div class="span12 articuloTitulo">
 					<div class="row-fluid">
@@ -56,7 +56,7 @@ $this -> assign('botones', $botones);
 			<div class="span7 categoriaLinea"></div>
 		</div>
 		<div class="row-fluid">
-			<div class="span8"><?= $this -> Html -> image('http://lorempixel.com/232/173/nature?'.time()); ?></div>
+			<div class="span8"><?= $this -> Html -> image('http://lorempixel.com/232/173/cats/'); ?></div>
 			<div class="row-fluid">
 				<div class="span12 articuloTitulo">
 					<div class="row-fluid">
@@ -81,7 +81,7 @@ $this -> assign('botones', $botones);
 			<div class="span7 categoriaLinea"></div>
 		</div>
 		<div class="row-fluid">
-			<div class="span8"><?= $this -> Html -> image('http://lorempixel.com/115/173/nature?'.time()); ?></div>
+			<div class="span8"><?= $this -> Html -> image('http://lorempixel.com/115/173/food/'); ?></div>
 			<div class="row-fluid">
 				<div class="span12 articuloTitulo">
 					<div class="row-fluid">
@@ -104,7 +104,7 @@ $this -> assign('botones', $botones);
 			<div class="span7 categoriaLinea"></div>
 		</div>
 		<div class="row-fluid">
-			<div class="span8"><?= $this -> Html -> image('http://lorempixel.com/173/173/nature?'.time()); ?></div>
+			<div class="span8"><?= $this -> Html -> image('http://lorempixel.com/173/173/city/'); ?></div>
 			<div class="row-fluid">
 				<div class="span12 articuloTitulo">
 					<div class="row-fluid">
@@ -137,7 +137,7 @@ $this -> assign('botones', $botones);
 				}
 				// echo $this -> Html -> image(isset($imagen) && $imagen ? $imagen : 'http://lorempixel.com/450/200/nature?' . time());
 				?>
-				<img src="<?=isset($imagen) && $imagen ? $imagen : 'http://lorempixel.com/450/200/nature?' . time() ?>" />
+				<img src="<?php //echo isset($imagen) && $imagen ? $imagen : 'http://lorempixel.com/450/200/nature?' . time() ?>" />
 			</p>
 			<p>
 				<a class="btn" href="#">Ver &raquo;</a>
@@ -146,7 +146,7 @@ $this -> assign('botones', $botones);
 		<div class="span6">
 			<h2>Videos</h2>
 			<p>
-				<?= $this -> Html -> image('http://lorempixel.com/450/200/technics?' . time()); ?>
+				<?php //echo  $this -> Html -> image('http://lorempixel.com/450/200/technics?' . time()); ?>
 			</p>
 			<p>
 				<a class="btn" href="#">Ver &raquo;</a>
@@ -155,7 +155,7 @@ $this -> assign('botones', $botones);
 		<div class="span6">
 			<h2>Audios</h2>
 			<p>
-				<?= $this -> Html -> image('http://lorempixel.com/450/200/nightlife?' . time()); ?>
+				<?php //echo  $this -> Html -> image('http://lorempixel.com/450/200/nightlife?' . time()); ?>
 			</p>
 			<p>
 				<a class="btn" href="#">Ver &raquo;</a>
@@ -164,7 +164,7 @@ $this -> assign('botones', $botones);
 		<div class="span6">
 			<h2>Publicaciones</h2>
 			<p>
-				<?= $this -> Html -> image('http://lorempixel.com/450/200/people?' . time()); ?>
+				<?php //echo  $this -> Html -> image('http://lorempixel.com/450/200/people?' . time()); ?>
 			</p>
 			<p>
 				<a class="btn" href="#">Ver &raquo;</a>
