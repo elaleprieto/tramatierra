@@ -62,7 +62,9 @@
 </div>
 <div class="row-fluid">
 	<div class="span4">
-		<div id='sidebarContacto' class="sidebar sidebarButton" data-onButton="#sidebarOnContacto"></div>
+		<!-- <div id='sidebarContacto' class="sidebar sidebarButton" data-onButton="#sidebarOnContacto"></div> -->
+		<?php echo $this->Html->link('<div id="sidebarContacto" class="sidebar sidebarButton" data-onButton="#sidebarOnContacto"></div>', 
+			'/contacto', array('escape'=>FALSE)) ?>
 	</div>
 	<div class="span8">
 		<div id='sidebarOnContacto' class="sidebar sidebarOnButton"></div>

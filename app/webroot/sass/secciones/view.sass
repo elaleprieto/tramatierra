@@ -1,9 +1,7 @@
 @import variables
 
 // Fuentes
-@font-face
-  font-family: "Existence-Light"
-  src: font-url("Existence-Light.otf") format("truetype")
++font-face("Existence", font-files("Existence-Light.otf"))
   
 #seccionTitle, .areaButton
   font-family: Existence-Light
@@ -16,7 +14,6 @@
     color: $verdeClaro
     text-decoration: none
     
-  
 .fotos
   text-align: center
   overflow: hidden
