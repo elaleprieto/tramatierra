@@ -1,0 +1,68 @@
+@import compass, fonts, foot, partials/animateAle, sidebar, variables
+
+#bannerTop
+  background-image: image-url('bg_principal.jpg')
+  background-repeat: no-repeat
+  background-size: 970px auto
+  padding: 130px 60px 0px
+  
+#leyendaButtonDiv
+  background: image-url('top/masBackground.png') repeat-x
+  padding-right: 10px
+  text-align: right
+  
+#leyendaTop
+  margin-bottom: 0px
+  overflow: hidden
+  padding: 0px 60px 0px
+  height: 1.2em
+  
+.articuloTitulo
+  background-color: transparentize(#000000, 0.3)
+  color: #ffffff
+  font-family: Dekar
+  font-size: 10pt
+  line-height: 40px
+  margin-top: -55px
+  padding-left: 10px
+  position: relative
+  
+.categoria
+  margin-bottom: 10px
+  
+.categoriaArea
+  padding-right: 10px
+  text-align: right
+
+.categoriaLinea
+  background-image: image-url('categoria/lineaHorizontal.png')
+  background-repeat: repeat-x
+  margin-left: 0 !important
+  min-height: 10pt !important
+
+.categoriaNombre
+  background-image: image-url('categoria/fondo.png')
+  color: white
+  font-family: Spathaserif
+  font-size: 10pt
+  min-height: 10pt !important
+  text-align: center
+ 
+.categoriaTitulo
+  margin-bottom: 5px
+
+.container
+  background-image: image-url('fondo.png')
+  box-shadow: 0 0 30px #4D3E2F
+  padding-top: 30px
+
+.leyendaTopHide
+  height: 1.2em
+  // @include animate(bounceInTop);
+
+.leyendaTopShow
+  height: auto
+
+body
+  background-image: image-url('fondoOscuro.png')
+  padding-top: 0

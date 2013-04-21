@@ -39,7 +39,7 @@
 		<?php
 		echo $this -> Html -> meta('icon');
 
-		echo $this -> Html -> css(array('bootstrap.min', 'bootstrap-responsive.min', 'trama'));
+		echo $this -> Html -> css(array('bootstrap.min', 'bootstrap-responsive.min', 'layouts/trama'));
 
 		echo $this -> Html -> script('vendor/modernizr-2.6.1-respond-1.1.0.min');
 
@@ -92,7 +92,7 @@
 					</div>
 				</div>
 			</div>
-			<div id="plantaLogo"><?php echo $this->Html->image('planta.png') ?></div>
+			<!-- <div id="plantaLogo"><?php echo $this->Html->image('planta.png') ?></div> -->
 				
 				<!-- ------------------------------------------------------------------------------------------------------
 									Definición del Banner como background-image de la clase hero-unit

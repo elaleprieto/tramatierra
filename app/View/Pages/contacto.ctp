@@ -23,7 +23,9 @@
 </div>
 <div class="row-fluid">
 	<div class="span1">
-		<?php echo $this->Html->image('contacto2.png') ?>
+		<?php for ($i=0; $i < 12; $i++) { ?> 
+			<div class="row-fluid"><div class="span12 <?= $i % 2 == 0 ? 'lineaOscura' : 'lineaClara' ?>"></div></div>
+		<?php } ?>
 	</div>
 	<div class="span11">
 		<form>

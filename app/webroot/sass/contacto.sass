@@ -1,7 +1,7 @@
 @import compass/css3, variables
 
 +font-face("Genericons", font-files("genericons-regular-webfont.eot", "genericons-regular-webfont.svg", "genericons-regular-webfont.ttf", "genericons-regular-webfont.woff"))
-+font-face("Existence", font-files("Existence-Light.otf"))
+$margin-bottom-linea: -5px
 
 @mixin icon
   -webkit-font-smoothing: antialiased
@@ -21,7 +21,7 @@
 #submitButton
   background-color: #9ABA42
   border: 0
-  color: #000000
+  color: #ffffff
   min-width: 65px
   padding: 5px
   width: 30%
@@ -36,6 +36,14 @@
 .facebook:before
   content: '\f203'
   +icon
+
+.lineaClara
+  background: image-url('contacto/lineaClara.png') no-repeat
+  margin-bottom: $margin-bottom-linea
+
+.lineaOscura
+  background: image-url('contacto/lineaOscura.png') no-repeat
+  margin-bottom: $margin-bottom-linea
 
 .socialAddress
   color: $verdeClaro

@@ -1,3 +1,4 @@
+<div id="plantaLogo"><?php echo $this->Html->link($this->Html->image('planta.png'), array('controller'=>'multimedia', 'action'=>'agregar'), array('escape'=>FALSE)) ?></div>
 <footer class="row-fluid">
 	<div class="span12">
 		<div class="row-fluid">
@@ -16,7 +17,7 @@
 					</div>
 				</div>
 				<div class="row-fluid">
-					<div class="offset1 span10">
+					<div class="offset1 span9">
 						<p><strong>@ 2013 Tramatierra.</strong></p>
 						<br />
 						<p>

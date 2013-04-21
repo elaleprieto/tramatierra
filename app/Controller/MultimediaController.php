@@ -108,6 +108,7 @@ class MultimediaController extends AppController {
 	}
 
 	public function agregar() {
+		$this->layout = 'admin';
 		if ($this -> request -> is('post')) {
 			$this -> Multimedia -> create();
 			$this -> Multimedia -> set($this -> request -> data);

@@ -6,6 +6,11 @@ App::uses('AppController', 'Controller');
  * @property Seccion $Seccion
  */
 class SeccionesController extends AppController {
+	public function beforeFilter() {
+        parent::beforeFilter();
+        $this -> Auth -> allow('*');
+    }
+	
 
 	/**
 	 * index method

@@ -1,0 +1,44 @@
+@import compass, fonts, foot, partials/animateAle, sidebar, variables
+
+#lineaFinal
+  background-color: $verdeLineas
+  min-height: 1px !important
+  height: 1px
+  margin-bottom: 30px
+
+#plantaLogo
+  margin-right: 60px
+  text-align: right
+  
+#redes
+  display: table
+  height: 250px
+
+#redesIcons
+  display: table-cell
+  position: relative
+  vertical-align: middle
+
+#seccionTitle
+  border-bottom: 1px $verdeOscuro solid
+  color: $verdeOscuro
+  font-family: 'Existence'
+
+.container
+  background-image: image-url('fondo.png')
+  box-shadow: 0 0 30px #4D3E2F
+  padding-top: 30px
+
+.socialIconsBox
+  border-bottom: 0.5px solid $verdeLineas
+  margin-top: 10px
+  text-align: center
+
+body
+  background-image: image-url('fondoOscuro.png')
+  padding-top: 0
+
+footer
+  +background-image(linear-gradient($verdeOscuro, $verdeClaro))
+  color: white
+  font-size: 8pt

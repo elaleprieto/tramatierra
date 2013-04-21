@@ -1,6 +1,7 @@
 <div class="row-fluid">
 	<div class="span4">
-		<div id='sidebarQuienesSomos' class="sidebar sidebarButton" data-onButton="#sidebarOnQuienesSomos"></div>
+		<?php echo $this->Html->link('<div id="sidebarQuienesSomos" class="sidebar sidebarButton" data-onButton="#sidebarOnQuienesSomos"></div>', 
+			'/', array('escape'=>FALSE)) ?>
 	</div>
 	<div class="span8">
 		<div id='sidebarOnQuienesSomos' class="sidebar sidebarOnButton"></div>

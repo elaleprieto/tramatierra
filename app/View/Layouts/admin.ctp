@@ -39,7 +39,7 @@
 		<?php
 		echo $this -> Html -> meta('icon');
 
-		echo $this -> Html -> css(array('bootstrap.min', 'bootstrap-responsive.min', 'layouts/trama'));
+		echo $this -> Html -> css(array('bootstrap.min', 'bootstrap-responsive.min', 'layouts/admin'));
 
 		echo $this -> Html -> script('vendor/modernizr-2.6.1-respond-1.1.0.min');
 
@@ -53,17 +53,8 @@
 		<![endif]-->
 		<div id="container-fluid" class="container">
 			<div class="row-fluid">
-				<div class="span6 offset1">
-					<h1 id="seccionTitle"><?php echo $this->fetch('titulo') ?></h1>
-				</div>
-				<div class="span4">
-					<h2 class="areaButton pull-right"><?php echo $this->fetch('botones') ?></h2>
-				</div>
-			</div>
-			<div class="row-fluid">
 				<div class="span10 offset1">
-					<?php echo $this->Session->flash() ?>
-					<?php echo $this->element('banner') ?>
+					<h1 id="seccionTitle"><?php echo $this->fetch('sectionTitle') ?></h1>
 				</div>
 			</div>
 			<div class="row-fluid">
@@ -72,33 +63,17 @@
 					<?php echo $this->element('sidebar') ?>
 				</div>
 				<!-- /sidebar -->
-
+				
 				<div class="span9">
-					<!-- leyenda -->
 					<div class="row-fluid">
 						<div class="span12">
-							<div id="leyendaTop">
-								<div id="leyendaInside">
-									<?php echo $this -> fetch('descripcion-general'); ?>
-								</div>
-							</div>
-							<div id="leyendaButtonDiv">
-								<?php echo $this->Html->image('top/mas.png', array('id' => 'leyendaButtonMas')) ?>
-							</div>
-						</div>
-					</div>
-					<!-- /leyenda -->
-
-					<!-- body -->
-					<div class="row-fluid">
-						<div class="span12">
+							<!--Body content-->
 							<?php echo $this -> fetch('content'); ?>
 						</div>
 					</div>
-					<!-- /body -->
 				</div>
 			</div>
-			<?php echo $this->element('footer') ?>
+			<?php echo $this->element('footer') ?>	
 		</div>
 		<!-- /container -->
 
@@ -108,8 +83,8 @@
 		<script async="async">
 			window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')
 		</script>
-		<?php echo $this -> Html -> script(array('vendor/bootstrap.min', 'plugins', 'trama'), array('async'=>'async')); ?>
-		<?php echo $this -> fetch('script'); ?>
+		<?php echo $this -> Html -> script(array('vendor/bootstrap.min', 'plugins', 'trama'), array('async'=>'async')) ?>
+		<?php echo $this -> fetch('script') ?>
 		<script async="async" type="text/javascript">
 		  var _gaq = _gaq || [];
 		  _gaq.push(['_setAccount', 'UA-27799433-5']);
