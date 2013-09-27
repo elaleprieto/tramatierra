@@ -15,14 +15,15 @@ if (!empty($seccion['Area'])) :
 endif;
 $this -> assign('banner', h($seccion['Seccion']['banner']));
 $this -> assign('titulo', mb_strtoupper(h($seccion['Seccion']['title']), 'UTF-8'));
-$this -> assign('descripcion-general', '<p>' . h($seccion['Seccion']['descripcion']) . '</p>');
+//$this -> assign('descripcion-general', '<p>' . h($seccion['Seccion']['descripcion']) . '</p>');
+$this -> assign('descripcion-general', '<p>' . nl2br(h($seccion['Seccion']['descripcion'])) . '</p>');
 $this -> assign('botones', $botones);
 ?>
 <div class="row-fluid">
 	<div class="span11 categoria">
 		<div class="row-fluid categoriaTitulo">
 			<div class="span5 categoriaNombre">
-				fotos
+				FOTOS
 			</div>
 			<div class="span7 categoriaLinea"></div>
 		</div>
@@ -48,7 +49,7 @@ $this -> assign('botones', $botones);
 	<div class="span11 categoria">
 		<div class="row-fluid categoriaTitulo">
 			<div class="span5 categoriaNombre">
-				videos
+				VIDEOS
 			</div>
 			<div class="span7 categoriaLinea"></div>
 		</div>
@@ -73,7 +74,7 @@ $this -> assign('botones', $botones);
 	<div class="span6 categoria">
 		<div class="row-fluid categoriaTitulo">
 			<div class="span5 categoriaNombre">
-				publicaciones
+				PUBLICACIONES
 			</div>
 			<div class="span7 categoriaLinea"></div>
 		</div>
@@ -96,7 +97,7 @@ $this -> assign('botones', $botones);
 	<div class="offset1 span4 categoriaTitulo">
 		<div class="row-fluid categoriaTitulo">
 			<div class="span5 categoriaNombre">
-				audios
+				AUDIOS
 			</div>
 			<div class="span7 categoriaLinea"></div>
 		</div>

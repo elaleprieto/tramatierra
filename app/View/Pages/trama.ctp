@@ -6,7 +6,7 @@
 	<div class="span5 categoria">
 		<div class="row-fluid categoriaTitulo">
 			<div class="span5 categoriaNombre">
-				fotos
+				FOTOS
 			</div>
 			<div class="span7 categoriaLinea"></div>
 		</div>
@@ -27,10 +27,10 @@
 			</div>
 		</div>
 	</div>
-	<div class="offset1 span4 categoria">
+	<div class="offset1 span5 categoria">
 		<div class="row-fluid categoriaTitulo">
 			<div class="span5 categoriaNombre">
-				publicaciones
+				PUBLICACIONES
 			</div>
 			<div class="span7 categoriaLinea"></div>
 		</div>
@@ -55,7 +55,7 @@
 	<div class="span5 categoria">
 		<div class="row-fluid categoriaTitulo">
 			<div class="span5 categoriaNombre">
-				videos
+				VIDEOS
 			</div>
 			<div class="span7 categoriaLinea"></div>
 		</div>
@@ -75,10 +75,10 @@
 			</div>
 		</div>
 	</div>
-	<div class="offset1 span4 categoriaTitulo">
+	<div class="offset1 span5 categoriaTitulo">
 		<div class="row-fluid categoriaTitulo">
 			<div class="span5 categoriaNombre">
-				audios
+				AUDIOS
 			</div>
 			<div class="span7 categoriaLinea"></div>
 		</div>

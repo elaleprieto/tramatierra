@@ -5,7 +5,7 @@
 <!-- Example row of columns -->
 <div class="row">
 	<div class="span6">
-		<h2>Fotos</h2>
+		<h2>FOTOS</h2>
 		<p>
 			<?= $this -> Html -> image('http://lorempixel.com/450/200/nature?'.time()); ?>
 		</p>
@@ -14,7 +14,7 @@
 		</p>
 	</div>
 	<div class="span6">
-		<h2>Videos</h2>
+		<h2>VIDEOS</h2>
 		<p>
 			<?= $this -> Html -> image('http://lorempixel.com/450/200/technics?'.time()); ?>
 		</p>
@@ -23,7 +23,7 @@
 		</p>
 	</div>
 	<div class="span6">
-		<h2>Audios</h2>
+		<h2>AUDIOS</h2>
 		<p>
 			<?= $this -> Html -> image('http://lorempixel.com/450/200/nightlife?'.time()); ?>
 		</p>
@@ -32,7 +32,7 @@
 		</p>
 	</div>
 	<div class="span6">
-		<h2>Publicaciones</h2>
+		<h2>PUBLICACIONES</h2>
 		<p>
 			<?= $this -> Html -> image('http://lorempixel.com/450/200/people?'.time()); ?>
 		</p>

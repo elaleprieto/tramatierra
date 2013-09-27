@@ -4,16 +4,21 @@
 		<div class="row-fluid">
 			<div id="redes" class="span6">
 				<div id="redesIcons" class="row-fluid">
-					<div class="offset2 span2"><?php echo $this->Html->image('footer/logo1.gif') ?></div>
-					<div class="offset1 span2"><?php echo $this->Html->image('footer/logo2.gif') ?></div>
-					<div class="offset1 span2"><?php echo $this->Html->image('footer/logo3.gif') ?></div>
+					<div class="offset2 span2"><?php echo $this->Html->image('footer/agenda.png', array(
+																		'url'=>'http://agendasantafe.org.ar')) ?></div>
+					<div class="offset1 span2"><?php echo $this->Html->image('footer/conoSur.png', array(
+																		'url'=>'http://conosursustentable.org'))?></div>
+					<div class="offset1 span2"><?php echo $this->Html->image('footer/logoPAS.png', array(
+																		'url'=>'http://conosursustentable.org/argentina-sustentable/')) ?></div>
 				</div>
 			</div>
 			<div class="span6">
 				<div class="row-fluid">
 					<div class="offset8 span2 socialIconsBox">
-						<?php echo $this->Html->image('footer/facebook.png', array('class'=>'socialIcons')) ?>
-						<?php echo $this->Html->image('footer/twitter.png', array('class'=>'socialIcons')) ?>
+						<?php echo $this->Html->image('footer/facebook.png', array('class'=>'socialIcons'
+																,'url'=>'https://www.facebook.com/tramatierra.biocolectivo?fref=ts')) ?>
+						<?php echo $this->Html->image('footer/twitter.png', array('class'=>'socialIcons'
+																,'url'=>'https://twitter.com/tramatierra')) ?>
 					</div>
 				</div>
 				<div class="row-fluid">
