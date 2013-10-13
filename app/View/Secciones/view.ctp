@@ -1,29 +1,36 @@
 <?php
-// debug($seccion);
-echo $this->Html->css('secciones/view', '', array('inline'=>FALSE));
-$this -> set('title_for_layout', $seccion['Seccion']['title']);
+	echo $this->Html->css('secciones/view', '', array('inline'=>FALSE));
+	$this -> set('title_for_layout', $seccion['Seccion']['title']);
 
-$botones = '';
-if (!empty($seccion['Area'])) :
-	$botones = ' | ';
-	foreach ($seccion['Area'] as $area) :
-		// $botones .= '<span>' . $this -> Html -> link($area['title'] . ' &raquo;', array('controller' => 'areas', 'action' => 'view', $area['id']), array('class' => 'btn btn-primary btn-large', 'escape' => FALSE)) . '</span>';
-		// $botones .= $this->Html->link(mb_strtoupper($area['title'], 'UTF-8'), array('controller' => 'areas', 'action' => 'view', $area['id']), array('class' => 'areaButton', 'escape' => FALSE));
-		$botones .= $this->Html->link(mb_strtoupper($area['title'], 'UTF-8'), '#', array('class' => 'areaButton', 'escape' => FALSE));
-		$botones .= ' | ';
-	endforeach;
-endif;
-$this -> assign('banner', h($seccion['Seccion']['banner']));
-$this -> assign('titulo', mb_strtoupper(h($seccion['Seccion']['title']), 'UTF-8'));
-//$this -> assign('descripcion-general', '<p>' . h($seccion['Seccion']['descripcion']) . '</p>');
-$this -> assign('descripcion-general', '<p>' . nl2br(h($seccion['Seccion']['descripcion'])) . '</p>');
-$this -> assign('botones', $botones);
+	$botones = '';
+	if (!empty($seccion['Area'])) :
+		$botones = ' | ';
+		foreach ($seccion['Area'] as $area) :
+			// $botones .= '<span>' . $this -> Html -> link($area['title'] . ' &raquo;', array('controller' => 'areas', 'action' => 'view', $area['id']), array('class' => 'btn btn-primary btn-large', 'escape' => FALSE)) . '</span>';
+			// $botones .= $this->Html->link(mb_strtoupper($area['title'], 'UTF-8'), array('controller' => 'areas', 'action' => 'view', $area['id']), array('class' => 'areaButton', 'escape' => FALSE));
+			$botones .= $this->Html->link(mb_strtoupper($area['title'], 'UTF-8'), '#', array('class' => 'areaButton', 'escape' => FALSE));
+			$botones .= ' | ';
+		endforeach;
+	endif;
+	$this -> assign('banner', h($seccion['Seccion']['banner']));
+	$this -> assign('titulo', mb_strtoupper(h($seccion['Seccion']['title']), 'UTF-8'));
+	//$this -> assign('descripcion-general', '<p>' . h($seccion['Seccion']['descripcion']) . '</p>');
+	$this -> assign('descripcion-general', '<p>' . nl2br(h($seccion['Seccion']['descripcion'])) . '</p>');
+	$this -> assign('botones', $botones);
 ?>
 <div class="row-fluid">
 	<div class="span11 categoria">
 		<div class="row-fluid categoriaTitulo">
 			<div class="span5 categoriaNombre">
-				FOTOS
+				<!--FOTOS-->
+				<!--
+				<?php echo $this->Html->link('FOTOS', array(
+												'controller' => 'Multimedia', 
+												'action' => 'listar', 1, $seccion['Seccion']['id'])); ?>
+											-->
+				<?php echo $this->Html->link('FOTOS', array(
+												'controller' => 'MultimediasSecciones', 
+												'action' => 'listar', $seccion['Seccion']['id'],1)); ?>
 			</div>
 			<div class="span7 categoriaLinea"></div>
 		</div>
@@ -49,7 +56,15 @@ $this -> assign('botones', $botones);
 	<div class="span11 categoria">
 		<div class="row-fluid categoriaTitulo">
 			<div class="span5 categoriaNombre">
-				VIDEOS
+				<!--VIDEOS-->
+				<!--
+				<?php echo $this->Html->link('VIDEOS', array(
+												'controller' => 'Multimedia', 
+												'action' => 'listar', 2)); ?>
+					-->							
+				<?php echo $this->Html->link('VIDEOS', array(
+												'controller' => 'MultimediasSecciones', 
+												'action' => 'listar', $seccion['Seccion']['id'],2)); ?>
 			</div>
 			<div class="span7 categoriaLinea"></div>
 		</div>
@@ -74,7 +89,15 @@ $this -> assign('botones', $botones);
 	<div class="span6 categoria">
 		<div class="row-fluid categoriaTitulo">
 			<div class="span5 categoriaNombre">
-				PUBLICACIONES
+				<!--PUBLICACIONES-->
+				<!--
+				<?php echo $this->Html->link('PUBLICACIONES', array(
+												'controller' => 'Multimedia', 
+												'action' => 'listar', 4)); ?>
+				-->
+				<?php echo $this->Html->link('PUBLICACIONES', array(
+												'controller' => 'MultimediasSecciones', 
+												'action' => 'listar', $seccion['Seccion']['id'],4)); ?>
 			</div>
 			<div class="span7 categoriaLinea"></div>
 		</div>
@@ -97,7 +120,15 @@ $this -> assign('botones', $botones);
 	<div class="offset1 span4 categoriaTitulo">
 		<div class="row-fluid categoriaTitulo">
 			<div class="span5 categoriaNombre">
-				AUDIOS
+				<!--AUDIOS-->
+				<!--
+				<?php echo $this->Html->link('AUDIOS', array(
+												'controller' => 'Multimedia', 
+												'action' => 'listar', 3)); ?>
+				-->
+				<?php echo $this->Html->link('AUDIOS', array(
+												'controller' => 'MultimediasSecciones', 
+												'action' => 'listar', $seccion['Seccion']['id'],3)); ?>
 			</div>
 			<div class="span7 categoriaLinea"></div>
 		</div>

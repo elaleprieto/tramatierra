@@ -7,6 +7,11 @@ App::uses('AppController', 'Controller');
  */
 class MultimediaController extends AppController {
 
+    public function beforeFilter() {
+        parent::beforeFilter();
+        $this -> Auth -> allow('contactar','add', 'index','view','listar', 'listarTodos');
+    }
+
 	/**
 	 * index method
 	 *
@@ -24,12 +29,16 @@ class MultimediaController extends AppController {
 	 * @param string $id
 	 * @return void
 	 */
-	public function view($id = null) {
+	public function view($id = null, $seccion = null) {
 		$this -> Multimedia -> id = $id;
 		if (!$this -> Multimedia -> exists()) {
 			throw new NotFoundException(__('Invalid multimedia'));
 		}
 		$this -> set('multimedia', $this -> Multimedia -> read(null, $id));
+		
+		$this->layout = 'seccion';
+		$this -> set('seccion', $this -> Multimedia->Seccion -> read(null, $seccion));
+		
 	}
 
 	/**
@@ -107,6 +116,14 @@ class MultimediaController extends AppController {
 		$this -> redirect(array('action' => 'index'));
 	}
 
+	/**
+	 * agregar method
+	 *
+	 * @throws
+	 * @throws 
+	 * @param 
+	 * @return 
+	 */
 	public function agregar() {
 		$this->layout = 'admin';
 		if ($this -> request -> is('post')) {
@@ -140,5 +157,53 @@ class MultimediaController extends AppController {
 		$secciones = $this -> Multimedia -> Seccion -> find('list');
 		$subareas = $this -> Multimedia -> Subarea -> find('list');
 		$this -> set(compact('multimediaCategorias', 'areas', 'secciones', 'subareas'));
+	}
+
+	/**
+	 * listar method
+	 * Listado de todos los multimedios de una categoría determinada.
+	 * @throws
+	 * @throws 
+	 * @param 
+	 * @return
+	 */ 
+	public function listar($id=null, $seccion=null){
+		$this -> Multimedia -> recursive = 0;
+		$this -> set('multimedia', $this -> paginate());
+		
+		$this -> set('multimedia', $this->Multimedia->find('all', array(
+        							'conditions' => array('Multimedia.multimedia_categoria_id =' => $id))));
+	}
+	
+	/**
+	 * listarTodos method
+	 * Listado de todos los multimedios de una categoría y sección determinada.
+	 * @throws
+	 * @throws 
+	 * @param 
+	 * @return
+	 */
+	public function listarTodos($id=null){
+		$this -> Multimedia -> recursive = 0;
+		$this -> set('multimedia', $this -> paginate());
+		
+		//Todos los multimedia
+		$this -> set('multimedia', $this->Multimedia->find('all', array(
+        							'conditions' => array('Multimedia.multimedia_categoria_id =' => $id))));
+
+		//tratamiento de los reproductores
+		if($id == 1){
+			//FOTOS
+						
+		} else if($id==2){
+			//VIDEOS
+			
+		} else if($id == 3){
+			//AUDIOS
+			
+		} else if($id ==4){
+			//PUBLICACIONES
+
+		}
 	}
 }

@@ -6,6 +6,11 @@ App::uses('AppController', 'Controller');
  * @property MultimediasSeccion $MultimediasSeccion
  */
 class MultimediasSeccionesController extends AppController {
+	//AGREGADO :: ver sino se rompe el auth
+	public function beforeFilter() {
+        parent::beforeFilter();
+        $this -> Auth -> allow('*');
+    }
 
 /**
  * index method
@@ -102,4 +107,23 @@ class MultimediasSeccionesController extends AppController {
 		$this->Session->setFlash(__('Multimedias seccion was not deleted'));
 		$this->redirect(array('action' => 'index'));
 	}
+
+	 public function listar($seccion=null, $categoria=null){
+		$this -> MultimediasSeccion -> recursive = 0;
+		$this -> set('multimediaSeccion', $this -> paginate());
+
+		//Todos los multimedia de la Seccion de la Categoría.
+		$this -> set('multimediaseccion', $this->MultimediasSeccion->find('all', array(
+        							'conditions' => array(	'MultimediasSeccion.seccion_id =' => $seccion,
+															'Multimedia.multimedia_categoria_id =' => $categoria))));
+															
+		//Setear el layout de la sección
+		$this->layout = 'seccion';
+		$this -> set('seccion', $this -> MultimediasSeccion->Seccion -> read(null, $seccion));
+		
+		$categoriaNombre = $this -> MultimediasSeccion -> Multimedia ->MultimediaCategoria -> find('first', array(
+									'conditions' => array( 'MultimediaCategoria.id' => $categoria)));
+		
+		$this -> set('categoriaNombre', $categoriaNombre['MultimediaCategoria']['title']);
+	 }
 }
