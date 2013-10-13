@@ -10,7 +10,7 @@ class UsersController extends AppController {
 
     public function beforeFilter() {
         parent::beforeFilter();
-        $this -> Auth -> allow('contactar');
+        $this -> Auth -> allow('contactar','add', 'index','listar');
     }
 
     public function login() {

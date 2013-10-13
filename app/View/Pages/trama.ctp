@@ -6,7 +6,12 @@
 	<div class="span5 categoria">
 		<div class="row-fluid categoriaTitulo">
 			<div class="span5 categoriaNombre">
-				FOTOS
+				<!--FOTOS-->
+				<!-- prueba-->
+				<?php echo $this->Html->link('FOTOS', array(
+												'controller' => 'Multimedia', 
+												'action' => 'listarTodos', 1)); ?>
+				<!-- fin prueba-->
 			</div>
 			<div class="span7 categoriaLinea"></div>
 		</div>
@@ -30,7 +35,12 @@
 	<div class="offset1 span5 categoria">
 		<div class="row-fluid categoriaTitulo">
 			<div class="span5 categoriaNombre">
-				PUBLICACIONES
+				<!--PUBLICACIONES-->
+				<!-- prueba -->
+						<?php echo $this->Html->link('PUBLICACIONES', array(
+												'controller' => 'Multimedia', 
+												'action' => 'listarTodos', 4)); ?>
+				<!-- prueba -->
 			</div>
 			<div class="span7 categoriaLinea"></div>
 		</div>
@@ -55,7 +65,12 @@
 	<div class="span5 categoria">
 		<div class="row-fluid categoriaTitulo">
 			<div class="span5 categoriaNombre">
-				VIDEOS
+				<!-- VIDEOS -->
+				<!-- prueba -->
+				<?php echo $this->Html->link('VIDEOS', array(
+										'controller' => 'Multimedia', 
+										'action' => 'listarTodos', 2)); ?>
+				<!-- prueba -->
 			</div>
 			<div class="span7 categoriaLinea"></div>
 		</div>
@@ -78,7 +93,12 @@
 	<div class="offset1 span5 categoriaTitulo">
 		<div class="row-fluid categoriaTitulo">
 			<div class="span5 categoriaNombre">
-				AUDIOS
+				<!--AUDIOS-->
+				<!-- prueba -->
+				<?php echo $this->Html->link('AUDIOS', array(										
+										'controller' => 'Multimedia', 
+										'action' => 'listarTodos', 3)); ?>
+				<!-- prueba -->
 			</div>
 			<div class="span7 categoriaLinea"></div>
 		</div>

@@ -15,8 +15,8 @@
 	foreach ($secciones as $seccion): ?>
 	<tr>
 		<td><?php echo h($seccion['Seccion']['id']); ?>&nbsp;</td>
-		<td><?php echo h($seccion['Seccion']['nombre']); ?>&nbsp;</td>
-		<td><?php echo h($seccion['Seccion']['titulo']); ?>&nbsp;</td>
+		<td><?php echo h($seccion['Seccion']['name']); ?>&nbsp;</td>
+		<td><?php echo h($seccion['Seccion']['title']); ?>&nbsp;</td>
 		<td><?php echo h($seccion['Seccion']['banner']); ?>&nbsp;</td>
 		<td><?php echo h($seccion['Seccion']['descripcion']); ?>&nbsp;</td>
 		<td><?php echo h($seccion['Seccion']['created']); ?>&nbsp;</td>
