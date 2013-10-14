@@ -62,9 +62,12 @@
 					<div class="span11 articuloTitulo">
 						<div class="row-fluid">
 							<div class="span6">
-								<?php echo $this->Html->link($multimedia['Multimedia']['name'], array(
+								<!--<?php echo $this->Html->link($multimedia['Multimedia']['name'], array(
 														'controller' => 'multimedia',
-														'action' => 'view', $multimedia['Multimedia']['id'], $seccion['Seccion']['id']));?>		
+														'action' => 'view', $multimedia['Multimedia']['id'], $seccion['Seccion']['id']));?>-->
+								<?php echo $this->Html->link($multimedia['Multimedia']['title'], array(
+														'controller' => 'multimedia',
+														'action' => 'view', $multimedia['Multimedia']['id'], $seccion['Seccion']['id']));?>				
 							</div>
 							<div class="span6 categoriaArea">
 								<?= $this -> Html -> image('area/etiqueta/culturaLibre.png'); ?>
