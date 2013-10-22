@@ -38,14 +38,13 @@
 		</style>
 		<?php
 		echo $this -> Html -> meta('icon');
-
 		echo $this -> Html -> css(array('bootstrap.min', 'bootstrap-responsive.min', 'layouts/trama'));
+
 		echo $this -> Html -> script('vendor/modernizr-2.6.1-respond-1.1.0.min');
-		
+
 		echo $this -> fetch('meta');
 		echo $this -> fetch('css');
 		?>
-
 	</head>
 	<body>
 		<!--[if lt IE 7]>
@@ -103,24 +102,6 @@
 		<!-- /container -->
 
 		<?php echo $this -> element('sql_dump'); ?>
-
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-		<script async="async">
-			window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')
-		</script>
-		<?php echo $this -> Html -> script(array('vendor/bootstrap.min', 'plugins', 'trama'), array('async'=>'async')); ?>
-		<?php echo $this -> fetch('script'); ?>
-		<script async="async" type="text/javascript">
-		  var _gaq = _gaq || [];
-		  _gaq.push(['_setAccount', 'UA-27799433-5']);
-		  _gaq.push(['_trackPageview']);
-		
-		  (function() {
-		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		  })();
-		</script>
 		<?php echo $this -> Js -> writeBuffer(); ?>
 	</body>
 </html>

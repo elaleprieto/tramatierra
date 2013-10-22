@@ -65,9 +65,28 @@
 								<!--<?php echo $this->Html->link($multimedia['Multimedia']['name'], array(
 														'controller' => 'multimedia',
 														'action' => 'view', $multimedia['Multimedia']['id'], $seccion['Seccion']['id']));?>-->
+								
 								<?php echo $this->Html->link($multimedia['Multimedia']['title'], array(
 														'controller' => 'multimedia',
-														'action' => 'view', $multimedia['Multimedia']['id'], $seccion['Seccion']['id']));?>				
+														'action' => 'view', 
+														$multimedia['Multimedia']['id'], 
+														$seccion['Seccion']['id']));?>
+														
+								<?php
+								if($multimedia['Multimedia']['multimedia_categoria_id']==2){
+									echo $this->Html->link($multimedia['Multimedia']['title'], array(
+														'controller' => 'multimedia',
+														'action' => 'view_video', 
+														$multimedia['Multimedia']['id'], 
+														$seccion['Seccion']['id']));
+								} else if($multimedia['Multimedia']['multimedia_categoria_id']==3){
+									echo $this->Html->link($multimedia['Multimedia']['title'], array(
+														'controller' => 'multimedia',
+														'action' => 'view_audio', 
+														$multimedia['Multimedia']['id'], 
+														$seccion['Seccion']['id']));
+								}
+								?>				
 							</div>
 							<div class="span6 categoriaArea">
 								<?= $this -> Html -> image('area/etiqueta/culturaLibre.png'); ?>

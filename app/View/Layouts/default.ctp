@@ -47,6 +47,7 @@
 		echo $this -> fetch('css');
 		echo $this -> fetch('script');
 		?>
+
 	</head>
 	<body>
 		<!--[if lt IE 7]>
