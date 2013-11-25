@@ -8,7 +8,8 @@ App::uses('AppController', 'Controller');
 class MultimediaController extends AppController {
     public function beforeFilter() {
         parent::beforeFilter();
-        $this -> Auth -> allow('contactar','add', 'index','view','listar', 'listarTodos');
+        $this -> Auth -> allow('contactar','add', 'index','view','listar', 'listarTodos', 
+        						'view_video', 'view_foto', 'view_publicacion', 'view_audio');
     }
 
 	/**
@@ -232,6 +233,22 @@ class MultimediaController extends AppController {
 		
 		$this->layout = 'seccion_multimedia';
 		$this -> set('seccion', $this -> Multimedia->Seccion -> read(null, $seccion));
+		
+		//Para saber que tipo de reproductor tiene que desplegar
+		//$this -> set('categoria', $this -> Multimedia -> multimedia_categoria_id);
+	}
+	
+	public function view_publicacion($id = null, $seccion = null) {
+		$this -> Multimedia -> id = $id;
+		if (!$this -> Multimedia -> exists()) {
+			throw new NotFoundException(__('Invalid multimedia'));
+		}
+		$this -> set('multimedia', $this -> Multimedia -> read(null, $id));
+		
+		$this->layout = 'seccion_multimedia';
+		$this -> set('seccion', $this -> Multimedia->Seccion -> read(null, $seccion));
+		
+
 		
 		//Para saber que tipo de reproductor tiene que desplegar
 		//$this -> set('categoria', $this -> Multimedia -> multimedia_categoria_id);
