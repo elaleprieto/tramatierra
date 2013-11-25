@@ -21,23 +21,24 @@
 <script type="text/javascript" src="http://tramatierra.workspace.com/js/vendor/jplayer/jquery.jplayer.min.js"></script>
   
 <?php 
+
 	echo '<script type="text/javascript">
 	 		$.noConflict();
     		jQuery(document).ready(function($){
       			$("#jquery_jplayer_1").jPlayer({
         			ready: function () {
           				$(this).jPlayer("setMedia", {
-            				oga: "http://tramatierra.workspace.com/mm/'.substr($multimedia['Multimedia']['archivo'],0,-3).'ogg",
             				mp3: "http://tramatierra.workspace.com/mm/'.substr($multimedia['Multimedia']['archivo'],0,-3).'mp3"
           				});
         			},
         			swfPath: "http://tramatierra.workspace.com/js/vendor/jplayer/",
-        			supplied: "oga, mp3",
+        			supplied: "mp3",
         			wmode: "window",
         			solution:"html, flash"
       			});
     		});
   		</script>';
+
 ?>
 <?php
 	echo $this -> Html -> css('multimedias/view', '', array('inline' => FALSE));
@@ -82,27 +83,37 @@
 		          		<li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>
 		          		<li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
 		        	</ul>
-		        <div class="jp-progress">
-		          <div class="jp-seek-bar">
-		            <div class="jp-play-bar"></div>
-		          </div>
-		        </div>
-		        <div class="jp-volume-bar">
-		          <div class="jp-volume-bar-value"></div>
-		        </div>
-		        <div class="jp-time-holder">
-		          <div class="jp-current-time"></div>
-		          <div class="jp-duration"></div>
-		          <ul class="jp-toggles">
-		            <li><a href="javascript:;" class="jp-repeat" tabindex="1" title="repeat">repeat</a></li>
-		            <li><a href="javascript:;" class="jp-repeat-off" tabindex="1" title="repeat off">repeat off</a></li>
-		          </ul>
-		        </div>
-		      </div>
-		      <div class="jp-no-solution">
-		        <span>Se requiere actualización</span>
-		        El browser que utilizas no puede reproducir este audio. Actualiza el browser o instala <a href="http://get.adobe.com/flashplayer/" target="_blank">plugin Flash</a>.
-		      </div>
+			        <div class="jp-progress">
+			        	<div class="jp-seek-bar">
+			            	<div class="jp-play-bar"></div>
+			          	</div>
+			        </div>
+			        <div class="jp-volume-bar">
+			        	<div class="jp-volume-bar-value"></div>
+			        </div>
+			        <div class="jp-time-holder">
+			        	<div class="jp-current-time"></div>
+			          	<div class="jp-duration"></div>
+			          	<ul class="jp-toggles">
+				            <li><a href="javascript:;" class="jp-repeat" tabindex="1" title="repeat">repeat</a></li>
+				            <li><a href="javascript:;" class="jp-repeat-off" tabindex="1" title="repeat off">repeat off</a></li>
+						</ul>
+			        </div>
+				</div>
+		      	<div class="jp-no-solution">
+		        	<span>Se requiere actualización</span>
+		        	El browser que utilizas no puede reproducir este audio. Actualiza el browser o instala <a href="http://get.adobe.com/flashplayer/" target="_blank">plugin Flash</a>.
+		      	</div>
 			</div>
 		</div>
-		</div>
+	</div>
+	<!-- Volver al listado anterior -->
+	<div class="row-fluid">
+		<?php echo $this->Html->link('<<', array(
+					'controller' => 'MultimediasSecciones',
+					'action' => 'listar', 
+					$seccion['Seccion']['id'], 
+					$multimedia['Multimedia']['multimedia_categoria_id']),
+					array('class' => 'btn btn-success'))?>
+	</div>
+</div>
