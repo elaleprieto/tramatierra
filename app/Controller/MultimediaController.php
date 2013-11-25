@@ -12,7 +12,7 @@ class MultimediaController extends AppController {
     public function beforeFilter() {
         parent::beforeFilter();
         $this -> Auth -> allow('contactar','add', 'index','view','listar', 'listarTodos', 
-        						'view_video', 'view_foto', 'view_publicacion', 'view_audio');
+        						'view_video', 'view_fotos', 'view_publicacion', 'view_audio');
     }
 
 	/**
