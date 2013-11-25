@@ -85,6 +85,12 @@
 														'action' => 'view_publicacion', 
 														$multimedia['Multimedia']['id'], 
 														$seccion['Seccion']['id']));
+								} elseif ($multimedia['Multimedia']['multimedia_categoria_id']==1) {
+									echo $this->Html->link($multimedia['Multimedia']['title'], array(
+														'controller' => 'multimedia',
+														'action' => 'view_fotos', 
+														$multimedia['Multimedia']['id'], 
+														$seccion['Seccion']['id']));
 								}
 								?>				
 							</div>
