@@ -1,5 +1,8 @@
 <?php
 App::uses('AppController', 'Controller');
+App::uses('Folder', 'Utility');
+App::uses('File', 'Utility');
+
 /**
  * Multimedia Controller
  *
@@ -250,6 +253,44 @@ class MultimediaController extends AppController {
 		
 
 		
+		//Para saber que tipo de reproductor tiene que desplegar
+		//$this -> set('categoria', $this -> Multimedia -> multimedia_categoria_id);
+	}
+	
+	public function view_fotos($id = null, $seccion = null) {
+		$this -> Multimedia -> id = $id;
+		if (!$this -> Multimedia -> exists()) {
+			throw new NotFoundException(__('Invalid multimedia'));
+		}
+		$this -> set('multimedia', $this -> Multimedia -> read(null, $id));
+		
+		$this->layout = 'seccion_multimedia';
+		$this -> set('seccion', $this -> Multimedia->Seccion -> read(null, $seccion));
+		
+
+		$directorio = 'foto'.$id;
+		$ruta = WWW_ROOT.'/mm/'.$directorio;
+		$archivos = array();
+		if (is_dir($ruta)){
+  			if ($dh = opendir($ruta)){
+    			while (($file = readdir($dh)) !== false){
+   					if (($file != '.') && ($file != '..')){
+						array_push($archivos, $file); 				 	
+   					 }  
+    			}
+    			closedir($dh);
+  			}
+		}
+		
+		$this -> set('archivos', $archivos);
+		//debug($archivos);
+
+		/*
+		foreach ($files as $file) {
+			$contents = $file->info();
+			echo $contents;
+		}
+		*/
 		//Para saber que tipo de reproductor tiene que desplegar
 		//$this -> set('categoria', $this -> Multimedia -> multimedia_categoria_id);
 	}
