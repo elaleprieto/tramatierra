@@ -66,10 +66,10 @@
 	<h2><?php echo h($multimedia['Multimedia']['name']); ?></h2>
 	<!--Titulo y descripción de la multimedia-->
 	<div class="row-fluid">
-		<h3><?php echo h($multimedia['Multimedia']['title']); ?></h3>
+		<h3 class="multimedia-tittle"><?php echo h($multimedia['Multimedia']['title']); ?></h3>
 		<?php echo h($multimedia['Multimedia']['descripcion']); ?>
 	</div>
-	<div class="row-fluid">
+	<div class="row-fluid vistaVideo">
 		<div id="jp_container_1" class="jp-video jp-video-270p">
 			<div class="jp-type-single">
 		    	<div id="jquery_jplayer_1" class="jp-jplayer" style="width: 480px; height: 270px"></div>
@@ -113,4 +113,13 @@
 		    </div>
 		</div>
 	</div>
+</div>
+<!-- Volver al listado anterior -->
+<div class="row-fluid">
+	<?php echo $this->Html->link('<<', array(
+					'controller' => 'MultimediasSecciones',
+					'action' => 'listar', 
+					$seccion['Seccion']['id'], 
+					$multimedia['Multimedia']['multimedia_categoria_id']),
+					array('class' => 'btn btn-success'))?>
 </div>
