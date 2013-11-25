@@ -1,9 +1,26 @@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script async="async">
+	window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')
+</script>
+<?php echo $this -> Html -> script(array('vendor/bootstrap.min', 'plugins', 'trama'), array('async'=>'async')); ?>
+<?php echo $this -> fetch('script'); ?>
+<script async="async" type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-27799433-5']);
+  _gaq.push(['_trackPageview']);
+	
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ })();
+</script>
 <?php
 
 	echo $this -> Html -> css('multimedias/view', '', array('inline' => FALSE));
 	echo $this -> Html -> css('secciones/view', '', array('inline' => FALSE));
-	echo $this -> Html -> css('styles', '', array('inline' => FALSE));
-
+	echo $this -> Html -> css('styles', '', array('inline' => FALSE));  
+   
 	$this -> set('title_for_layout', $seccion['Seccion']['title']);
 
 $botones = '';
@@ -22,29 +39,43 @@ $this -> assign('titulo', mb_strtoupper(h($seccion['Seccion']['title']), 'UTF-8'
 $this -> assign('descripcion-general', '<p>' . nl2br(h($seccion['Seccion']['descripcion'])) . '</p>');
 $this -> assign('botones', $botones);
 ?>
-  <!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>-->
-  <script type="text/javascript" src="/js/vendor/jquery-1.9.1.min.js"></script>
-  
+<script type="text/javascript" src="/js/vendor/jquery-1.9.1.min.js"></script>
+<link rel="stylesheet" href="/app/webroot/css/blueimp-gallery.min.css">
+  	
 <div class="multimedia view">
 	<h2><?php echo h($multimedia['Multimedia']['name']); ?></h2>
 	<div class="row-fluid">
 		<h3><?php echo h($multimedia['Multimedia']['title']); ?></h3>
 		<?php echo h($multimedia['Multimedia']['descripcion']); ?>
 	</div>
+
 	<div class="row-fluid vistaVideo">
-		<!--<?php echo $archivos['0'];?>-->
-		<?php 
-			foreach($archivos as $archivo){
-				echo '	<div class="span3">';
-				echo $this->html->image('/mm/foto'.$multimedia['Multimedia']['id'].'/'.$archivo, 
-						array('alt' => $multimedia['Multimedia']['name']));
-				echo '</div>';
-			}
-		?>
+		<!-- The Gallery as lightbox dialog, should be a child element of the document body -->
+		<div id="blueimp-gallery" class="blueimp-gallery">
+    		<div class="slides"></div>
+    		<h3 class="title"></h3>
+    		<a class="prev">‹</a>
+    		<a class="next">›</a>
+    		<a class="close">×</a>
+    		<a class="play-pause"></a>
+    		<ol class="indicator"></ol>
+		</div>
+		<div id="links">
+			<?php 
+				foreach($archivos as $archivo){
+					echo '	<div class="span3 img-fotos">
+							<a href="'.'/mm/foto'.$multimedia['Multimedia']['id'].'/'.$archivo.'" title="'.$multimedia['Multimedia']['name'].'" rel="gallery">';
+					echo $this->html->image('/mm/foto'.$multimedia['Multimedia']['id'].'/'.$archivo, 
+							array('alt' => $multimedia['Multimedia']['name']));
+					echo '</a></div>';
+				}
+			?>
+		</div>
 	</div>
+	
  	<!-- Volver al listado anterior -->
 	<div class="row-fluid">
-		<?php echo $this->Html->link('Volver Listado', array(
+		<?php echo $this->Html->link('<<', array(
 						'controller' => 'MultimediasSecciones',
 						'action' => 'listar', 
 						$seccion['Seccion']['id'], 
@@ -52,3 +83,14 @@ $this -> assign('botones', $botones);
 						array('class' => 'btn btn-success'))?>
 	</div>
 </div>
+<script src="/app/webroot/js/vendor/blueimp-gallery.js"></script>
+<script>
+document.getElementById('links').onclick = function (event) {
+    event = event || window.event;
+    var target = event.target || event.srcElement,
+        link = target.src ? target.parentNode : target,
+        options = {index: link, event: event},
+        links = this.getElementsByTagName('a');
+    blueimp.Gallery(links, options);
+};
+</script>
