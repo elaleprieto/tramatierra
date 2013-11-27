@@ -48,7 +48,31 @@
 				<div class="span12">
 					<div class="row-fluid">
 						<div class="span6">
-							<?= $this->Html->image('multimedia/'.$multimedia['Multimedia']['archivo']); ?>
+							<!--<?= $this->Html->image('multimedia/'.$multimedia['Multimedia']['archivo']); ?>-->
+							<!-- Imagen -->
+							<?php
+								//Obtener la imagen si es foto
+								if($multimedia['Multimedia']['multimedia_categoria_id'] == 1){
+									$directorio = 'foto'.$multimedia['Multimedia']['id'];
+									$ruta = WWW_ROOT.'/mm/'.$directorio;
+									$unArchivo = 0;
+									//$archivos = array();
+									if (is_dir($ruta)){
+	  									if ($dh = opendir($ruta)){
+	    									while (($file = readdir($dh)) !== false && ($unArchivo==0)){
+	   											if(($file != '.') && ($file != '..')){
+	   												$unArchivo=1;
+													echo '<img src="/mm/'.$directorio.'/'.$file.'"/>';
+												}  
+	    									}
+	    									closedir($dh);
+	  									}
+									}
+									//$this -> set('archivos', $archivos);
+								} elseif($multimedia['Multimedia']['multimedia_categoria_id'] == 2){
+									
+								}
+							?>
 						</div>
 						<div class="span5">
 							<p>
