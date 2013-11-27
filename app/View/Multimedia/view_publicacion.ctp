@@ -48,7 +48,7 @@
 		<?php echo h($multimedia['Multimedia']['descripcion']); ?>
 	</div>
 	<div class="row-fluid vistaVideo">
-
+		<img src="/img/publicacion.png"/>
 		<?php echo '<a 	class="btn btn-large" 
 						href="http://tramatierra.workspace.com/app/webroot/mm/' . $multimedia['Multimedia']['archivo'] . '" target="blank">
 						<i class=" icon-file"></i> ver PDF
