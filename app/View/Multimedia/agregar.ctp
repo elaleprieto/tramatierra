@@ -15,7 +15,17 @@ $this->assign('sectionTitle', 'NUEVA MULTIMEDIA');
 					?>
 				</div>
 			</div>
-			<div class="row-fluid">&nbsp;</div>
+			<div class="row-fluid">
+				<div class="span12">
+					<?php
+					if ($this->Form->isFieldError('imagen')) {
+						echo $this->Form->error('imagen', $this->Form->tagIsInvalid(), array('class'=>FALSE, 'wrap'=>'p class="text-error"'));
+					}
+					echo $this->Form->input('imagen', array('class'=>'span12', 'type'=>'file', 'label'=>array('class'=>'title', 'text'=>'IMAGEN')));
+					?>
+				</div>
+				
+			</div>
 			<div class="row-fluid">
 				<div class="span12">
 					<?php
@@ -26,6 +36,9 @@ $this->assign('sectionTitle', 'NUEVA MULTIMEDIA');
 					?>
 				</div>
 			</div>
+		</div>
+		<div class="span6">
+			<?php echo $this->Form->input('resumen', array('class'=>'span12', 'label'=>array('class'=>'title', 'text'=>'RESUMEN (300 caracteres)'))) ?>
 		</div>
 		<div class="span6">
 			<?php echo $this->Form->input('descripcion', array('class'=>'span12', 'label'=>array('class'=>'title', 'text'=>'DESCRIPCIÓN'))) ?>
