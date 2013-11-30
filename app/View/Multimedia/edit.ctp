@@ -6,6 +6,7 @@
 		echo $this->Form->input('id');
 		echo $this->Form->input('name');
 		echo $this->Form->input('title');
+		echo $this->Form->input('resumen');
 		echo $this->Form->input('descripcion');
 		echo $this->Form->input('archivo');
 		echo $this->Form->input('url');

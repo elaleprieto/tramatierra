@@ -43,6 +43,16 @@ class Multimedia extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
+		'resumen' => array(
+			'between' => array(
+				'rule' => array('between', 0, 300),
+				'message' => 'Debe introducir hasta 300 caracteres',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
 		'archivo' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
