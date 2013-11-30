@@ -28,8 +28,7 @@
           					$(this).jPlayer("setMedia", {
             					ogv: "http://tramatierra.workspace.com/mm/'.substr($multimedia['Multimedia']['archivo'],0,-3).'ogv",
             					m4v: "http://tramatierra.workspace.com/mm/'.substr($multimedia['Multimedia']['archivo'],0,-3).'mp4",
-            					poster: "http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png"
-          					});
+            				});
         				},
         				swfPath: "http://tramatierra.workspace.com/js/vendor/jplayer/",
         				supplied: "ogv, m4v",
@@ -63,11 +62,12 @@
 ?>
 
 <div class="multimedia view">
-	<h2><?php echo h($multimedia['Multimedia']['name']); ?></h2>
+	<!--<h2><?php echo h($multimedia['Multimedia']['name']); ?></h2>-->
 	<!--Titulo y descripción de la multimedia-->
 	<div class="row-fluid">
-		<h3 class="multimedia-tittle"><?php echo h($multimedia['Multimedia']['title']); ?></h3>
-		<?php echo h($multimedia['Multimedia']['descripcion']); ?>
+		<h2 class="multimedia-tittle"><?php echo h($multimedia['Multimedia']['title']); ?></h2>
+		<p class="resumen"><?php echo h($multimedia['Multimedia']['resumen']); ?></p>
+		<p align="justify"><?php echo h($multimedia['Multimedia']['descripcion']); ?></p>
 	</div>
 	<div class="row-fluid vistaVideo">
 		<div id="jp_container_1" class="jp-video jp-video-270p">

@@ -42,19 +42,31 @@
 
   
 <div class="multimedia view">
-	<h2><?php echo h($multimedia['Multimedia']['name']); ?></h2>
+	<!--<h2><?php echo h($multimedia['Multimedia']['name']); ?></h2>-->
 	<div class="row-fluid">
-		<h3><?php echo h($multimedia['Multimedia']['title']); ?></h3>
-		<?php echo h($multimedia['Multimedia']['descripcion']); ?>
+		<h2 class="multimedia-tittle"><?php echo h($multimedia['Multimedia']['title']); ?></h2>
+		<p class="resumen"><?php echo h($multimedia['Multimedia']['resumen']); ?></p>
+		<p align="justify"><?php echo h($multimedia['Multimedia']['descripcion']); ?></p>
 	</div>
 	<div class="row-fluid vistaVideo">
-		<img src="/img/publicacion.png"/>
-		<?php echo '<a 	class="btn btn-large" 
+		<div class="span6">
+		<?php 
+			echo '<a href="http://tramatierra.workspace.com/app/webroot/mm/'.$multimedia['Multimedia']['archivo'].'" target="blank">';
+			if($multimedia['Multimedia']['imagen'] == NULL){
+				echo '<img src="/img/publicacion.png"/>'; 
+			} else {
+				echo '<img src="/mm/'.$multimedia['Multimedia']['imagen'].'" class="img-polaroid"/>';
+			}
+			echo '</a>';
+		?>
+		</div>	
+ 	</div>
+ 	<div class="row-fluid">
+ 		<?php echo '<a 	class="btn btn-large" 
 						href="http://tramatierra.workspace.com/app/webroot/mm/' . $multimedia['Multimedia']['archivo'] . '" target="blank">
 						<i class=" icon-file"></i> ver PDF
 					</a>';?>
-					
-
+		
  	</div>
  	<!-- Volver al listado anterior -->
 	<div class="row-fluid">

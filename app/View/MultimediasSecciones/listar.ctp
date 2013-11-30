@@ -62,7 +62,7 @@
 	    									while (($file = readdir($dh)) !== false && ($unArchivo==0)){
 	   											if(($file != '.') && ($file != '..')){
 	   												$unArchivo=1;
-													echo '<img src="/mm/'.$directorio.'/'.$file.'"/>';
+													echo '<img src="/mm/'.$directorio.'/'.$file.'" class="img-polaroid"/>';
 												}  
 	    									}
 	    									closedir($dh);
@@ -70,14 +70,73 @@
 									}
 									//$this -> set('archivos', $archivos);
 								} elseif($multimedia['Multimedia']['multimedia_categoria_id'] == 2){
-									
+									//echo $this->element('video');
+									if($multimedia['Multimedia']['imagen'] == NULL){
+										echo $this->Html->image("/img/video.png", array(
+    											'url' => array('controller' => 'multimedia', 
+    															'action' => 'view_video', 
+																$multimedia['Multimedia']['id'], 
+																$seccion['Seccion']['id']),
+												'class'=> 'img-polaroid'
+												));
+									}
+									else{
+										$imagen= '/mm/'.$multimedia['Multimedia']['imagen'];
+										echo $this->Html->image($imagen, array(
+    											'url' => array('controller' => 'multimedia', 
+    															'action' => 'view_video', 
+																$multimedia['Multimedia']['id'], 
+																$seccion['Seccion']['id']),
+												'class'=> 'img-polaroid'
+												));	
+									}
+								} elseif($multimedia['Multimedia']['multimedia_categoria_id'] == 3){
+									if($multimedia['Multimedia']['imagen'] == NULL){
+										echo $this->Html->image("/img/audio.png", array(
+    											'url' => array('controller' => 'multimedia', 
+    															'action' => 'view_audio', 
+																$multimedia['Multimedia']['id'], 
+																$seccion['Seccion']['id']),
+												'class'=> 'img-polaroid'
+												));
+									}
+									else{
+										$imagen= '/mm/'.$multimedia['Multimedia']['imagen'];
+										echo $this->Html->image($imagen, array(
+    											'url' => array('controller' => 'multimedia', 
+    															'action' => 'view_audio', 
+																$multimedia['Multimedia']['id'], 
+																$seccion['Seccion']['id']),
+												'class'=> 'img-polaroid'
+												));	
+									}
+								} elseif($multimedia['Multimedia']['multimedia_categoria_id'] == 4){
+									if($multimedia['Multimedia']['imagen'] == NULL){
+										echo $this->Html->image("/img/publicacion.png", array(
+    											'url' => array('controller' => 'multimedia', 
+    															'action' => 'view_publicacion', 
+																$multimedia['Multimedia']['id'], 
+																$seccion['Seccion']['id']),
+												'class'=> 'img-polaroid'
+												));
+									}
+									else{
+										$imagen= '/mm/'.$multimedia['Multimedia']['imagen'];
+										echo $this->Html->image($imagen, array(
+    											'url' => array('controller' => 'multimedia', 
+    															'action' => 'view_publicacion', 
+																$multimedia['Multimedia']['id'], 
+																$seccion['Seccion']['id']),
+												'class'=> 'img-polaroid'
+												));	
+									}
 								}
 							?>
 						</div>
 						<div class="span5">
 							<p>
 								<b><?php echo $multimedia['Multimedia']['title'];?></b><br>
-								<?php echo  nl2br($multimedia['Multimedia']['descripcion']);?>
+								<?php echo  nl2br($multimedia['Multimedia']['resumen']);?>
 							</p>
 						</div>
 					</div>
@@ -96,25 +155,29 @@
 														'controller' => 'multimedia',
 														'action' => 'view_video', 
 														$multimedia['Multimedia']['id'], 
-														$seccion['Seccion']['id']));
+														$seccion['Seccion']['id']), array(
+														'class' => 'linkmultimedia'));
 								} else if($multimedia['Multimedia']['multimedia_categoria_id']==3){
 									echo $this->Html->link($multimedia['Multimedia']['title'], array(
 														'controller' => 'multimedia',
 														'action' => 'view_audio', 
 														$multimedia['Multimedia']['id'], 
-														$seccion['Seccion']['id']));
+														$seccion['Seccion']['id']), array(
+														'class' => 'linkmultimedia'));
 								} else if($multimedia['Multimedia']['multimedia_categoria_id']==4){
 									echo $this->Html->link($multimedia['Multimedia']['title'], array(
 														'controller' => 'multimedia',
 														'action' => 'view_publicacion', 
 														$multimedia['Multimedia']['id'], 
-														$seccion['Seccion']['id']));
+														$seccion['Seccion']['id']), array(
+														'class' => 'linkmultimedia'));
 								} elseif ($multimedia['Multimedia']['multimedia_categoria_id']==1) {
 									echo $this->Html->link($multimedia['Multimedia']['title'], array(
 														'controller' => 'multimedia',
 														'action' => 'view_fotos', 
 														$multimedia['Multimedia']['id'], 
-														$seccion['Seccion']['id']));
+														$seccion['Seccion']['id']), array(
+														'class' => 'linkmultimedia'));
 								}
 								?>				
 							</div>
