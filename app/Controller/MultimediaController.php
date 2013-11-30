@@ -150,6 +150,21 @@ class MultimediaController extends AppController {
 				$this -> Multimedia -> set('archivo', '');
 			}
 
+			# Se verifica y se setea la imagen
+			if (isset($this -> data['Multimedia']['imagen']['name']) && ($this -> data['Multimedia']['imagen']['name'] != '')) {
+				$nombreImagen = $this -> data['Multimedia']['imagen']['name'];
+				$uploadDir = WWW_ROOT . '/mm/';
+				$uploadFile = $uploadDir . $nombreImagen;
+
+				if (!move_uploaded_file($this -> data['Multimedia']['imagen']['tmp_name'], $uploadFile)) {
+					$this -> Session -> setFlash(__('The multimedia could not be saved. Please, verify the file.'));
+					return $this -> redirect(array('action' => 'cargar', $this -> request -> data));
+				}
+				$this -> Multimedia -> set('imagen', $nombreImagen);
+			} else {
+				$this -> Multimedia -> set('imagen', '');
+			}
+
 			if ($this -> Multimedia -> save()) {
 				$this -> Session -> setFlash(__('The multimedia has been saved'));
 				// $this -> redirect(array('action' => 'index'));
@@ -291,6 +306,22 @@ class MultimediaController extends AppController {
 			echo $contents;
 		}
 		*/
+		//Para saber que tipo de reproductor tiene que desplegar
+		//$this -> set('categoria', $this -> Multimedia -> multimedia_categoria_id);
+	}
+	
+	
+	//borrar
+	public function view_video_element($id = null, $seccion = null) {
+		$this -> Multimedia -> id = $id;
+		if (!$this -> Multimedia -> exists()) {
+			throw new NotFoundException(__('Invalid multimedia'));
+		}
+		$this -> set('multimedia', $this -> Multimedia -> read(null, $id));
+		
+		$this->layout = 'seccion_multimedia';
+		$this -> set('seccion', $this -> Multimedia->Seccion -> read(null, $seccion));
+		
 		//Para saber que tipo de reproductor tiene que desplegar
 		//$this -> set('categoria', $this -> Multimedia -> multimedia_categoria_id);
 	}
