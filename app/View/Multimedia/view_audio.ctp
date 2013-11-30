@@ -64,11 +64,12 @@
 	$this -> assign('botones', $botones);
 ?>
 <div class="multimedia view">
-	<h2><?php echo h($multimedia['Multimedia']['name']); ?></h2>
+	<!--<h2><?php echo h($multimedia['Multimedia']['name']); ?></h2>-->
 	<!--Titulo y descripción de la multimedia-->
 	<div class="row-fluid">
-		<h3><?php echo h($multimedia['Multimedia']['title']); ?></h3>
-		<?php echo h($multimedia['Multimedia']['descripcion']); ?>
+		<h2 class="multimedia-tittle"><?php echo h($multimedia['Multimedia']['title']); ?></h2>
+		<p class="resumen"><?php echo h($multimedia['Multimedia']['resumen']); ?></p>
+		<p align="justify"><?php echo h($multimedia['Multimedia']['descripcion']); ?></p>
 	</div>
 	<div class="row-fluid vistaVideo">
 		<div id="jquery_jplayer_1" class="jp-jplayer"></div>
